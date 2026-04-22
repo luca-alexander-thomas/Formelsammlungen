@@ -1,0 +1,61 @@
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{german}
+\usepackage[a4paper,margin=1.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc, positioning}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+
+
+\title{Formelsammlung GET 2 2026}
+%\subtitle{text}
+%\author{}
+\date{\today}
+
+% Dunkelgrün definieren
+\definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
+
+% TikZ Stil für Hinweispfeile
+\tikzset{
+  hint/.style={->, >=latex, thick, darkgreen}
+}
+
+% Einheitliche Zeilenhöhe in Tabellen mit array Paket
+\usepackage{array}
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+
+
+\begin{center}
+\maketitle
+
+\end{center}
+
+\section*{}
+
+\pagestyle{fancy}
+
+\rhead{\leftmark}
+\lhead{\rightmark}
+
+\rfoot{Stand: \today}
+\cfoot{\thepage}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{tabular}{@{} >{\raggedright\arraybackslash}p{7cm} >{\raggedleft\arraybackslash}p{9cm} @{}}
+
+\end{tabular}
+
+
+\end{document}

@@ -1,0 +1,123 @@
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[ngerman]{babel}
+\usepackage[a4paper,margin=1.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc, positioning}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[automark,headsepline,footsepline]{scrlayer-scrpage}
+
+
+
+\title{Formelsammlung GET 2 2026}
+%\subtitle{text}
+\author{}
+%\date{\today}
+
+% Dunkelgrün definieren
+\definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
+
+% TikZ Stil für Hinweispfeile
+\tikzset{
+  hint/.style={->, >=latex, thick, darkgreen}
+}
+
+% Einheitliche Zeilenhöhe in Tabellen mit array Paket
+\usepackage{array}
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+
+
+\begin{center}
+%\maketitle
+\end{center}
+
+\section*{Foliensatz 1}
+
+%\clearpairofpagestyles
+%\ihead{\rightmark}
+%\ohead{\leftmark}
+%\ofoot{Stand: \today}
+%\cfoot{\pagemark}
+
+\begin{tabular}{@{} l l @{}}
+
+Wechselspannungen \\
+\hspace*{20mm} Kreisfrequenz & $\omega = \dfrac{2 \pi}{T} = 2 \pi f$ \\
+\hspace*{20mm} Frequenz & $f = \dfrac{1}{T} = \dfrac{\omega}{2 \pi}$ \\
+
+\hspace{20mm} arithmetisches Mittel & $\overline{U}=\dfrac{1}{T}\int_0^T U(t) dt$ \\
+\hspace*{20mm} Effektivwert & $U_{eff} = \sqrt{\dfrac{1}{T}\int_0^T U^2(t) dt}$ \\
+ & $\Rightarrow U_{eff} = \dfrac{U_0}{\sqrt{2}}$ für Harmonische Signale \\
+
+ \hspace{20mm} Gleichrichtwert & $U_{gl} = \dfrac{1}{T}\int_0^T |U(t)| dt$ \\
+
+ \hspace*{20mm}Harmonische Wechselspannung über Zeit& $U(t) = \sqrt{2} \cdot U \cdot \cos(\omega t + \varphi_u)= \sqrt{2} \cdot Re(\underline{U} \cdot e^{j\omega t})$ \\
+ \hspace*{20mm}Phasor & $\underline{U} = {U_0} \cdot e^{j\varphi_u}$ \\
+Komplexe Zahlen \\
+\hspace{20mm}Euler Theorem & $e^{j\varphi} = \cos(\varphi) + j \sin(\varphi)$ \\
+& $j=\sqrt{-1} \Rightarrow j^2 = -1$ \\
+\hspace{20mm} Realteil komplexer Zahl $e^{jx}$ & $Re(e^{jx}) = \cos(x)$ \\
+\hspace*{20mm} Imaginärteil komplexer Zahl $e^{jx}$ & $Im(e^{jx}) = \sin(x)$ \\
+\hspace*{20mm} Kehrwert komplexer Zahl & $\dfrac{1}{j}=-j$ \\
+\hspace*{20mm} Konjugiert komplexe Erweiterung & $\dfrac{1}{a+jb} = \dfrac{a}{a^2+b^2} + j \cdot \dfrac{(-b)}{a^2+b^2}$ \\
+Komplex Bauteilgestze \\
+\hspace*{20mm} Spule & $U = L \cdot \dfrac{dI}{dt} \Rightarrow \underline{U} = j\omega L \cdot \underline{I}$ \\
+\hspace{20mm} Kondensator & $I = C \cdot \dfrac{dU}{dt} \Rightarrow \underline{I} = j\omega C \cdot \underline{U}$ \\
+\hspace*{20mm} Widerstand & $U = R \cdot I \Rightarrow \underline{U} = R \cdot \underline{I}$ \\
+\hspace*{20mm} Impedanz & $\underline{U} = \underline{Z} \cdot \underline{I}$ \\
+ & $\underline{Z} = j\omega L$ für Spule \\
+  & $\underline{Z} = \dfrac{1}{j\omega C}$ für Kondensator \\
+  & $\underline{Z} = R$ für Widerstand \\
+
+komplexer Widerstand & $\underline{Z} = R + jX$ \\
+\hspace*{20mm} Realteil & $Re(\underline{Z}) $ Wirkwiderstand \\
+\hspace*{20mm} Imaginärteil & $Im(\underline{Z})$ Blindwiderstand (Reaktanz)\\
+\hspace*{20mm} Kondensator & $Im(\underline{Z}) = -\dfrac{1}{\omega C}$ \\
+\hspace*{20mm} Spule & $Im(\underline{Z}) = \omega L$ \\
+
+\end{tabular}
+
+\newpage
+\subsection*{Koordinaten umformen}
+\begin{figure}[h] % [h] versucht das Bild genau HIER zu platzieren
+    \centering
+    % width=0.5\textwidth macht das Bild halb so breit wie den Text
+    \includegraphics[width=0.7\textwidth]{KoordinatenUmrechnen-13} 
+    \caption{Umrechnen von Koordinaten}
+    \label{fig:komplexe_ebene}
+\end{figure}
+
+\newpage
+\begin{tabular}{@{} l l @{}}
+
+Admittanz & $\underline{Y} = \dfrac{1}{\underline{Z}}$ \\
+\hspace*{20mm} Komplexer Leitwert & $\underline{Y} = G + jB$ \\
+\end{tabular}
+
+\vspace*{10mm}
+
+Viele Regeln der Linearen Schaltungsanalysen gelten auch für komplexe Größen, z.B.: \\
+\begin{tabular}{@{} l l @{}}
+\hspace*{20mm} Spannungsteiler & $\underline{U}_1 = \underline{U} \cdot \dfrac{\underline{Z}_1}{\underline{Z}_1 + \underline{Z}_2}$ \\
+\hspace*{20mm} Stromteiler & $\underline{I}_1 = \underline{I} \cdot \dfrac{\underline{Z}_2}{\underline{Z}_1 + \underline{Z}_2}$ \\
+\hspace*{20mm} Ohmsches Gesetz & $\underline{U} = \underline{Z} \cdot \underline{I}$ \\
+Stern-Dreick-Umwandlung & $\underline{Z}_1 = \dfrac{\underline{Z}_{12} \cdot \underline{Z}_{31}}{\underline{Z}_{12} + \underline{Z}_{23} + \underline{Z}_{31}}$ \\
+& $\underline{Z}_2 = \dfrac{\underline{Z}_{12} \cdot \underline{Z}_{23}}{\underline{Z}_{12} + \underline{Z}_{23} + \underline{Z}_{31}}$ \\
+& $\underline{Z}_3 = \dfrac{\underline{Z}_{13} \cdot \underline{Z}_{23}}{\underline{Z}_{12} + \underline{Z}_{23} + \underline{Z}_{31}}$ \\
+
+Dreick-Stern-Umwandlung & $\underline{Z}_{12} = \underline{Z}_{1} + \underline{Z}_{2} + \dfrac{\underline{Z}_1 \cdot \underline{Z}_2}{\underline{Z}_3}$ \\
+& $\underline{Z}_{23} = \underline{Z}_{2} + \underline{Z}_{3} + \dfrac{\underline{Z}_2 \cdot \underline{Z}_3}{\underline{Z}_1}$ \\
+& $\underline{Z}_{31} = \underline{Z}_{3} + \underline{Z}_{1} + \dfrac{\underline{Z}_3 \cdot \underline{Z}_1}{\underline{Z}_2}$ \\  
+\end{tabular}
+
+Impedanzen in Reihen oder Parallel Anordnung werden berechnet wie reelle Widerstände: \\
+
+\end{document}
