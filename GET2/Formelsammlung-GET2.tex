@@ -39,7 +39,7 @@
 %\maketitle
 \end{center}
 
-\section*{Foliensatz 1}
+\section{Foliensatz 1}
 
 %\clearpairofpagestyles
 %\ihead{\rightmark}
@@ -86,7 +86,7 @@ komplexer Widerstand & $\underline{Z} = R + jX$ \\
 \end{tabular}
 
 \newpage
-\subsection*{Koordinaten umformen}
+\subsection{Koordinaten umformen}
 \begin{figure}[h] % [h] versucht das Bild genau HIER zu platzieren
     \centering
     % width=0.5\textwidth macht das Bild halb so breit wie den Text
@@ -155,6 +155,72 @@ wobei dann folgendes eingesetzt werden muss & $X_1 = \dfrac{1}{\omega C_1}$ \\
 \end{tabular}
 
 Bei Schaltungen mit mehreren Quellen und unterschiedlichen Frequenzen addierung der Ergebnisse erst im Zeitbereich.
+
+\newpage
+\section{Foliensatz 2}
+
+\begin{tabular}{@{} l l @{}}
+
+\hspace*{20mm} Scheinleistung & $S= U_L \cdot I_L$ \\
+\hspace*{20mm} Scheinleistung mit Phasor & $\underline{S}= P_W + j \cdot P_B$ \\
+\hspace*{20mm} Wirkleistung & $P_w = S \cdot \cos \varphi $ \\
+\hspace*{20mm} Blindleistung & $P_b = S \cdot \sin \varphi$ \\
+\hspace*{20mm} Leistunggsfaktor & $\cos \varphi$ \\
+
+\end{tabular}
+\subsection{Leistung an einem Widerstand}
+\begin{tabular}{@{} l l @{}}
+\hspace*{20mm} Wirkleistung am Widerstand& $P_W = S = U \cdot I = \dfrac{U^2}{R}$ \\
+Am Widerstand fällt keine Bildleistung am $\rightarrow$ Kein Imaginärteil \\
+
+\end{tabular}
+
+\subsection{Leistung an der Spule}
+\begin{tabular}{@{} l l @{}}
+  \hspace*{20mm} Scheinleistung an der Spule & $S= U \cdot I = \dfrac{U^2}{\omega L}>0$ \\
+\end{tabular}
+
+\subsection{Leistung an dem Kondensator}
+\begin{tabular}{@{} l l @{}}
+  \hspace*{20mm} Scheinleistung an einem Kondensator & $S=  -U \cdot I = -\omega C \cdot U^2<0$ \\
+\end{tabular}
+
+\subsection{Leistung der Komplexen Wechselspannung}
+\begin{minipage}{\textwidth}
+\centering
+Leistung der Komplexen Wechselspannung\\[2mm]
+\includegraphics[width=0.7\textwidth]{Bild-FS2-Leistung-Komplexer-AC}
+\end{minipage}
+
+
+\begin{tabular}{@{} l l @{}}
+\hspace*{20mm} Wirkleistung & $P_W = Re(\underline{S}) = Re(\underline{U}_L \cdot \underline{I}_L^*)= \lvert \underline{I}_L \rvert^2 \cdot Re(\underline{Z}_L) = I_L^2 \cdot Re(\underline{Z}_L)$ \\
+ & $P_W = Re(\underline{S}) = Re(\underline{U}_L \cdot \underline{I}_L^*)= \lvert \underline{U}_L \rvert^2 \cdot Re(\underline{Y}_L) = U_L^2 \cdot Re(\underline{Y}_L)$ \\
+
+ \hspace{20mm} Blindleistung & $P_B = Im(\underline{S}) = Im(\underline{U}_L \cdot \underline{I}_L^*)= \lvert \underline{I}_L \rvert^2 \cdot Im(\underline{Z}_L) = I_L^2 \cdot Im(\underline{Z}_L)$ \\
+ & $P_B = Im(\underline{S}) = Im(\underline{U}_L \cdot \underline{I}_L^*)= \lvert \underline{U}_L \rvert^2 \cdot Im(\underline{Y}_L^*) = U_L^2 \cdot Im(\underline{Z}_L^*t)$ \\
+\end{tabular}
+
+\color{red}
+\vspace*{5mm}
+LEISTUNGSABPASSUNG NACHARBEITEN
+\color{black}
+
+\subsection{Schwingkreise}
+RLC Serienschwingkreis
+
+\begin{tabular}{@{} l l @{}}
+\hspace*{20mm} Resonanzfrequenz & $\omega_0 = \dfrac{1}{\sqrt{L \cdot C}}$ \\
+\hspace{20mm} Resonanzblindwiderstand & $X= \omega_0 \cdot L = \dfrac{1}{\sqrt{L \cdot C}} \cdot L = \sqrt{\dfrac{L}{C}}$ \\
+\hspace*{20mm} Güte des Schwingkreises & $Q = \dfrac{X}{R} = \dfrac{\omega_0 \cdot L}{R}$ \\
+
+\hspace*{20mm} Bei  $\dfrac{\omega}{\omega_0} = 0$ (DC Fall) gilt: & Reellwerige Spannung $U_C =$ Spannung $U_0$ \\
+
+\hspace{20mm} RLC Impedanz & $\underline{Z}_{ges} = R + j \omega L + \dfrac{1}{j \omega C} = R + j \cdot \left( \omega L - \dfrac{1}{\omega C} \right)$ \\
+Imaginärteil fällt weg bei: & $Im(\underline{Z}_{ges}) = 0$ für $\dfrac{\omega}{\omega_0}=1$ \\
+
+
+\end{tabular}
 
 
 
