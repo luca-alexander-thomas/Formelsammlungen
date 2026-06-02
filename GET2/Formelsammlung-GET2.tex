@@ -120,4 +120,42 @@ Dreick-Stern-Umwandlung & $\underline{Z}_{12} = \underline{Z}_{1} + \underline{Z
 
 Impedanzen in Reihen oder Parallel Anordnung werden berechnet wie reelle Widerstände: \\
 
+
+\vspace*{10mm}
+\noindent
+\begin{minipage}{\textwidth}
+\centering
+Umwandlung RL-Serie in RL-Parallel\\[2mm]
+\includegraphics[width=0.7\textwidth]{Bild-FS1-RL-Serie-Umwandeln}
+\end{minipage}
+
+\vspace*{5mm}
+\begin{tabular}{@{} l l @{}}
+
+$R_2 = \dfrac{R_1^2 + X_1^2}{R_1}$ & $X_2 = \dfrac{R_1^2 + X_1^2}{X_1}$ \\
+
+\end{tabular}
+
+\vspace*{10mm}
+\noindent
+\begin{minipage}{\textwidth}
+\centering
+Umwandlung RL-Parallel in RL-Serie\\[2mm]
+\includegraphics[width=0.7\textwidth]{Bild-FS1-RL-Parallel-Umwandeln}
+\end{minipage}
+
+\vspace*{5mm}
+\begin{tabular}{@{} l l @{}}
+
+$R_2 = R_1 \cdot \dfrac{X_1^2}{R_1^2 + X_1^2}$ & $X_2 = X_1 \cdot \dfrac{R_1^2}{R_1^2 + X_1^2}$ \\
+
+Diese Formeln gelten auch für die Umwandlung von RC-Schaltungen, & \\
+wobei dann folgendes eingesetzt werden muss & $X_1 = \dfrac{1}{\omega C_1}$ \\
+
+\end{tabular}
+
+Bei Schaltungen mit mehreren Quellen und unterschiedlichen Frequenzen addierung der Ergebnisse erst im Zeitbereich.
+
+
+
 \end{document}
