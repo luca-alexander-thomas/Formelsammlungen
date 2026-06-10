@@ -212,16 +212,103 @@ RLC Serienschwingkreis
 \begin{tabular}{@{} l l @{}}
 \hspace*{20mm} Resonanzfrequenz & $\omega_0 = \dfrac{1}{\sqrt{L \cdot C}}$ \\
 \hspace{20mm} Resonanzblindwiderstand & $X= \omega_0 \cdot L = \dfrac{1}{\sqrt{L \cdot C}} \cdot L = \sqrt{\dfrac{L}{C}}$ \\
-\hspace*{20mm} Güte des Schwingkreises & $Q = \dfrac{X}{R} = \dfrac{\omega_0 \cdot L}{R}$ \\
+\hspace*{20mm} Güte des Serienschwingkreises & $Q = \dfrac{X}{R} = \dfrac{\omega_0 \cdot L}{R}$ \\
 
 \hspace*{20mm} Bei  $\dfrac{\omega}{\omega_0} = 0$ (DC Fall) gilt: & Reellwerige Spannung $U_C =$ Spannung $U_0$ \\
 
 \hspace{20mm} RLC Impedanz & $\underline{Z}_{ges} = R + j \omega L + \dfrac{1}{j \omega C} = R + j \cdot \left( \omega L - \dfrac{1}{\omega C} \right)$ \\
 Imaginärteil fällt weg bei: & $Im(\underline{Z}_{ges}) = 0$ für $\dfrac{\omega}{\omega_0}=1$ \\
 
+Betrag der Impedanz wird minimiert  & Es gilt: $\lvert \underline{Z}_{ges} \rvert_{min} = R$ \\
+\hspace{20mm} Es folgt für I (Strom) & $\lvert \underline{I} \rvert = \dfrac{\lvert \underline{U_0} \rvert}{\lvert \underline{Z}_{ges} \rvert_{min}} = \dfrac{U_0}{R}$ \\
+
+Amplitudengang des Stroms & $ \lvert \underline{I} \rvert = \dfrac{\underline{U_0}}{\underline{Z_{ges}}} = \dfrac{U_0}{R \cdot \sqrt{1 + Q^2 \cdot \left( \dfrac{\omega}{\omega_0} - \dfrac{\omega_0}{\omega} \right)^2 }} $ \\
+
+\vspace{5mm} & \\
+
+GLC Parallelschwingkreis & \\
+
+\hspace*{20mm} Resonanzfrequenz & $\omega_0 = \dfrac{1}{\sqrt{L \cdot C}}$ [wie bei RLC Serie]\\
+\hspace{20mm} Resonanzblindwiderstand & $X= \omega_0 \cdot C = \dfrac{1}{\omega_0 \cdot L} = \sqrt{\dfrac{C}{L}}$ \\
+\hspace*{20mm} Güte des Parallelschwingkreises & $Q = \dfrac{X}{G}$ \\
+\hspace{20mm} GLC Admittanz & $\underline{Y}_{ges} = G + j \omega C + \dfrac{1}{j \omega L} = G + j \cdot \left( \omega C - \dfrac{1}{\omega L} \right)$ \\
+Imaginärteil fällt weg bei: & $Im(\underline{Y}_{ges}) = 0$ für $\dfrac{\omega}{\omega_0}=1$ \\
+
+\vspace{5mm} & \\
+Bandbreite & $ B = f_2 - f_1 = \dfrac{f_0}{Q} $ \\
+\end{tabular}
+
+
+\subsection{Vierpole}
+
+\begin{minipage}{\textwidth}
+\centering
+Beispiel Vierpol\\[2mm]
+\includegraphics[width=0.7\textwidth]{Bild-FS2-Vierpole1}
+\end{minipage}
+
+\begin{tabular}{@{} l l @{}}
+Spannungen & $\underline{U}_1 = \underline{Z}_{11} \cdot \underline{I}_1 + \underline{Z}_{12} \cdot \underline{I}_2$ \\
+& $\underline{U}_2 = \underline{Z}_{21} \cdot \underline{I}_1 + \underline{Z}_{22} \cdot \underline{I}_2$ \\
+
+Impedanzen (z-Parameter)& \\
+\hspace{20mm} Eingangsimpedanz & $\underline{Z}_{11} = \dfrac{\underline{U}_1}{\underline{I}_1} \bigg|_{\underline{I}_2=0}$ \\
+\hspace{20mm} Vorwärts Transimpedanz & $\underline{Z}_{21} = \dfrac{\underline{U}_2}{\underline{I}_1} \bigg|_{\underline{I}_2=0}$ \\
+\hspace{20mm} Rückwärts Transimpedanz & $\underline{Z}_{12} = \dfrac{\underline{U}_1}{\underline{I}_2} \bigg|_{\underline{I}_1=0}$ \\
+\hspace{20mm} Ausgangsimpedanz & $\underline{Z}_{22} = \dfrac{\underline{U}_2}{\underline{I}_2} \bigg|_{\underline{I}_1=0}$ \\
+
+Ströme & $\underline{I}_1 = \underline{Y}_{11} \cdot \underline{U}_1 + \underline{Y}_{12} \cdot \underline{U}_2$ \\
+& $\underline{I}_2 = \underline{Y}_{21} \cdot \underline{U}_1 + \underline{Y}_{22} \cdot \underline{U}_2$ \\
+
+Admittanzen Kurzschluss (y-Parameter) & \\
+\hspace{20mm} Eingangsadmittanz & $\underline{Y}_{11} = \dfrac{\underline{I}_1}{\underline{U}_1} \bigg|_{\underline{U}_2=0}$ \\
+\hspace{20mm} Vorwärts Kernadmittanz & $\underline{Y}_{21} = \dfrac{\underline{I}_2}{\underline{U}_1} \bigg|_{\underline{U}_2=0}$ \\
+\hspace{20mm} Rückwärts Kernadmittanz & $\underline{Y}_{12} = \dfrac{\underline{I}_1}{\underline{U}_2} \bigg|_{\underline{U}_1=0}$ \\
+\hspace{20mm} Ausgangsadmittanz & $\underline{Y}_{22} = \dfrac{\underline{I}_2}{\underline{U}_2} \bigg|_{\underline{U}_1=0}$ \\
+
+Hybride Formen & \\
+Spannungen & $\underline{U}_1 = \underline{h}_{11} \cdot \underline{I}_1 + \underline{h}_{12} \cdot \underline{u}_2$ \\
+Strom & $\underline{I}_2 = \underline{h}_{21} \cdot \underline{I}_1 + \underline{h}_{22} \cdot \underline{u}_2$ \\
+Hybride Parameter (h-Parameter) & \\
+ & $\underline{h}_{11} = \dfrac{\underline{U}_1}{\underline{I}_1} \bigg|_{\underline{u}_2=0}$ \\
+ & $\underline{h}_{12} = \dfrac{\underline{U}_1}{\underline{u}_2} \bigg|_{\underline{I}_1=0}$ \\
+ & $\underline{h}_{21} = \dfrac{\underline{I}_2}{\underline{I}_1} \bigg|_{\underline{U}_2=0}$ \\
+ & $\underline{h}_{22} = \dfrac{\underline{U}_2}{\underline{I}_2} \bigg|_{\underline{I}_1=0}$ \\
 
 \end{tabular}
 
 
+\begin{tabular}{@{} l l @{}}
+  Spannung & $\underline{U}_2 = \underline{k}_{21} \cdot \underline{U}_1 + \underline{k}_{22} \cdot \underline{I}_2$ \\
+  Strom & $\underline{I}_1 = \underline{k}_{11} \cdot \underline{U}_1 + \underline{k}_{12} \cdot \underline{I}_2$ \\
+
+Hybride Parameter (k-Parameter / P-Parameter) & \\
+ & $\underline{k}_{11} = \dfrac{\underline{I}_1}{\underline{U}_1} \bigg|_{\underline{I}_2=0}$ \\
+ & $\underline{k}_{12} = \dfrac{\underline{I}_1}{\underline{I}_2} \bigg|_{\underline{U}_1=0}$ \\
+ & $\underline{k}_{21} = \dfrac{\underline{U}_2}{\underline{U}_1} \bigg|_{\underline{I}_2=0}$ \\
+ & $\underline{k}_{22} = \dfrac{\underline{U}_2}{\underline{I}_2} \bigg|_{\underline{U}_1=0}$ \\  
+
+
+Spannung & $\underline{U}_1 = \underline{A}_{11} \cdot \underline{U}_2 + \underline{A}_{12} \cdot \underline{-I}_2$ \\
+Strom & $\underline{I}_1 = \underline{A}_{21} \cdot \underline{U}_2 + \underline{A}_{22} \cdot \underline{-I}_2$ \\
+
+ Kettenparameter (a-Parameter) & \\
+ & $\underline{A}_{11} = \dfrac{\underline{U}_1}{\underline{U}_2} \bigg|_{\underline{I}_2=0}$ \\
+ & $\underline{A}_{12} = \dfrac{\underline{U}_1}{\underline{-I}_2} \bigg|_{\underline{U}_2=0}$ \\
+ & $\underline{A}_{21} = \dfrac{\underline{I}_1}{\underline{U}_2} \bigg|_{\underline{I}_2=0}$ \\
+ & $\underline{A}_{22} = \dfrac{\underline{I}_1}{\underline{-I}_2} \bigg|_{\underline{U}_2=0}$ \\
+
+Spannung & $\underline{U}_2 = \underline{B}_{11} \cdot \underline{U}_1 + \underline{B}_{12} \cdot \underline{I}_1$ \\
+Strom & $\underline{-I}_2 = \underline{B}_{21} \cdot \underline{U}_1 + \underline{B}_{22} \cdot \underline{I}_1$ \\
+
+ Kettenparameter (B-Parameter) & \\
+ & $\underline{B}_{11} = \dfrac{\underline{U}_2}{\underline{U}_1} \bigg|_{\underline{I}_1=0}$ \\
+ & $\underline{B}_{12} = \dfrac{\underline{U}_2}{\underline{I}_1} \bigg|_{\underline{U}_1=0}$ \\
+ & $\underline{B}_{21} = \dfrac{\underline{-I}_2}{\underline{U}_1} \bigg|_{\underline{I}_1=0}$ \\
+ & $\underline{B}_{22} = \dfrac{\underline{-I}_2}{\underline{I}_1} \bigg|_{\underline{U}_1=0}$ \\
+
+\end{tabular}
+
+%Einfügen der Bilder 4-Pol 2,3. weitermachen bei FS-2 seite 80
 
 \end{document}
