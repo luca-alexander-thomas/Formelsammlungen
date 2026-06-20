@@ -1,0 +1,1417 @@
+% ============================================================
+% Klausur-Formelsammlung: BWL / VWL
+% DHBW -- Technik & Produktion, Semester 2
+% ============================================================
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper, top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{colortbl}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% ---- Farben ----
+\definecolor{bwlblue}{RGB}{0,60,120}
+\definecolor{vwlgreen}{RGB}{0,100,50}
+\definecolor{formulabg}{RGB}{232,242,255}
+\definecolor{hinweisbg}{RGB}{255,248,220}
+\definecolor{vwlbg}{RGB}{230,248,238}
+\definecolor{rowbg}{RGB}{220,234,248}
+\definecolor{rowvwl}{RGB}{210,240,220}
+
+% ---- Section-Format ----
+\titleformat{\section}{\large\bfseries\color{bwlblue}}{}{0em}{}[\color{bwlblue}\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries\color{bwlblue!80!black}}{}{0em}{}
+\titleformat{\subsubsection}{\small\bfseries\itshape}{}{0em}{}
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+\titlespacing*{\subsection}{0pt}{4pt}{2pt}
+\titlespacing*{\subsubsection}{0pt}{2pt}{1pt}
+
+% ---- tcolorbox-Stile ----
+\newtcolorbox{formelbox}{colback=formulabg, colframe=bwlblue, boxrule=0.6pt,
+  left=4pt, right=4pt, top=3pt, bottom=3pt}
+\newtcolorbox{hinweisbox}{colback=hinweisbg, colframe=orange!70!black, boxrule=0.5pt,
+  left=4pt, right=4pt, top=2pt, bottom=2pt, fonttitle=\small\bfseries}
+\newtcolorbox{vwlbox}{colback=vwlbg, colframe=vwlgreen, boxrule=0.6pt,
+  left=4pt, right=4pt, top=3pt, bottom=3pt}
+
+% ---- Tabellenspalten ----
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% ---- Seitenkopf ----
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Formelsammlung BWL/VWL} -- DHBW}
+\fancyhead[R]{\small Seite \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlength{\columnsep}{8pt}
+\sloppy
+\hfuzz=4pt
+\hyphenation{Wie-der-be-schaf-fungs-kos-ten An-schaf-fungs-kos-ten
+  For-de-rungs-aus-fall-wag-nis Ge-währ-leis-tungs-wag-nis
+  Kos-ten-stel-len-rech-nung Kos-ten-trä-ger-rech-nung
+  Kos-ten-ar-ten-rech-nung Be-triebs-ab-rech-nungs-bo-gen
+  Haupt-re-fi-nan-zie-rungs-ge-schäft Preis-elas-ti-zi-tät
+  Pro-duk-ti-ons-fak-to-ren Ge-winn-ver-tei-lung
+  Ei-gen-ka-pi-tal Fremd-ka-pi-tal Ge-samt-ka-pi-tal
+  Ein-zel-un-ter-neh-men Ge-sell-schaft-er
+  Min-dest-re-ser-ve-satz Geld-schöp-fungs-mul-ti-pli-ka-tor
+  Mehr-li-ni-en-or-ga-ni-sa-ti-on Ein-li-ni-en-or-ga-ni-sa-ti-on}
+
+% ============================================================
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries\color{bwlblue} Klausur-Formelsammlung: BWL / VWL}\\[4pt]
+  {\normalsize DHBW Technik \& Produktion \quad|\quad Kosten- und Leistungsrechnung + Volkswirtschaftslehre}\\[2pt]
+  {\small\color{gray} Klausur: 4--5 Aufgaben, 100 Punkte, 50\% BWL / 50\% VWL \quad|\quad Schwerpunkt BWL: 3 Stufen der KLR}
+\end{center}
+{\color{bwlblue}\hrule height 1pt}
+\vspace{4pt}
+
+% ============================================================
+%  SEITE 1 -- ÜBERBLICK KLR & ABGRENZUNGSRECHNUNG
+% ============================================================
+\section{1 \quad Aufbau der KLR und Abgrenzungsrechnung}
+
+\begin{multicols}{2}
+
+\subsection{Die 3 Stufen der Kostenrechnung}
+
+{\small
+\begin{tabular}{|L{2.3cm}|L{1.7cm}|L{3.2cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Stufe} & \textbf{Frage} & \textbf{Instrument / Aufgabe} \\
+\hline
+1. Kostenartenrechnung & Welche Kosten? & Kostenarten\-liste \\
+\hline
+2. Kostenstellenrechnung & Wo angefallen? & BAB (Betriebsabrechnungsbogen) \\
+\hline
+3. Kostenträgerrechnung & Wofür? & Kalkulation \\
+\hline
+\end{tabular}
+}
+
+\vspace{4pt}
+\textbf{Wichtige Kostenbegriffe:}
+
+\begin{tabular}{|L{2.5cm}|L{4.5cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Begriff} & \textbf{Bedeutung} \\
+\hline
+Einzelkosten & Direkt einem Produkt (Kostenträger) zurechenbar, z.\,B. Rohstoff, Fertigungslohn \\
+\hline
+Gemeinkosten & Nicht direkt zurechenbar; Verteilung über Zuschlagssätze \\
+\hline
+Fixkosten $K_f$ & Unabhängig von der Ausbringungsmenge $x$ \\
+\hline
+Variable Kosten $K_v$ & Proportional zur Menge $x$ \\
+\hline
+Kalk. Kosten & Nur in der KLR (kein Aufwand in FIBU) \\
+\hline
+Neutrale Aufwendungen & Nur in FIBU, nicht in KLR \\
+\hline
+\end{tabular}
+
+\columnbreak
+
+\subsection{Abgrenzungsrechnung: FIBU $\to$ KLR}
+
+\textbf{Überleitung Aufwand zu Kosten:}
+
+\begin{formelbox}
+\begin{align*}
+\text{Kosten} &= \text{Grundkosten} - \text{Neutraler Aufwand}\\
+              &\quad + \text{Kalk. Kosten}
+\end{align*}
+{\footnotesize
+\textbf{Grundkosten} = in FIBU \textit{und} KLR \quad
+\textbf{Neutraler Aufwand} = nur FIBU\\
+\textbf{Kalk. Kosten} = nur KLR}
+\end{formelbox}
+
+\vspace{4pt}
+\begin{tabular}{|L{4cm}|L{3cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Nur FIBU $\to$ herausrechnen} & \textbf{Nur KLR $\to$ hinzurechnen} \\
+\hline
+Betriebsfremder Aufwand & Kalk. Unternehmerlohn \\
+(Spenden, Verluste aus Beteiligungen) & \\
+\hline
+Außerordentl. Aufwand (Brand, Unfall) & Kalk. Miete (Eigengebäude) \\
+\hline
+Periodenfremder Aufwand & Kalk. Zinsen (auf EK) \\
+\hline
+Buchm. AfA (falls abweichend) & Kalk. Abschreibungen \\
+\hline
+-- & Kalk. Wagnisse \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\begin{hinweisbox}
+\textbf{Prüfungshinweis:} Buchm. Abschreibungen in FIBU $\ne$ kalk. Abschreibungen in KLR. Wenn beide existieren: buchm. AfA heraus, kalk. AfA hinein. Neutrale Erträge analog behandeln (z.\,B. Mieteinnahmen aus betriebsfremdem Gebäude).
+\end{hinweisbox}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 2 -- KALKULATORISCHE KOSTEN
+% ============================================================
+\section{2 \quad Kalkulatorische Kosten}
+
+\begin{multicols}{2}
+
+\subsection{Kalk. Abschreibungen}
+
+Ziel: tatsächlichen Werteverzehr der Anlagen erfassen -- unabhängig von Steuerrecht.
+
+\subsubsection{Lineare Abschreibung}
+\begin{formelbox}
+\[
+\text{Kalk. AfA} = \frac{\text{Bewertungsansatz}}{\text{Nutzungsdauer (ND)}}
+\]
+\end{formelbox}
+
+\subsubsection{Geometrisch-degressive Abschreibung}
+\begin{formelbox}
+\[
+\text{AfA}_t = \text{RBW}_{t-1} \times p\%
+\]
+\[
+\text{RBW}_t = \text{RBW}_{t-1} - \text{AfA}_t
+\]
+\end{formelbox}
+
+\begin{tabular}{|L{2cm}|L{5cm}|}
+\hline
+RBW & Restbuchwert zu Beginn des Jahres $t$ \\
+$p\%$ & Abschreibungsprozentsatz \\
+\hline
+\end{tabular}
+
+\subsubsection{Bewertungsgrundlage}
+\begin{tabular}{|L{3.2cm}|L{3.6cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Basis} & \textbf{Verwendung} \\
+\hline
+AK (Anschaffungs\-kosten) & Konservativ; nach FIBU-Recht \\
+WBK (Wieder\-beschaffungs\-kosten) & Substanzerhaltung; in KLR bevorzugt \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\begin{hinweisbox}
+Bei Anwendung der linearen AfA: betriebsnotwendiges AV oft als \textbf{halbe AK} angesetzt (= Durchschnittswert): $\text{AV}_\varnothing = \text{AK}/2$
+\end{hinweisbox}
+
+\subsection{Kalk. Zinsen}
+
+Opportunitätskosten des im Betrieb gebundenen Kapitals (auch für Eigenkapital!).
+
+\begin{formelbox}
+\begin{align*}
+\text{BNK} &= \text{AV} + \text{UV} - \text{Abzugskapital}\\
+\text{Kalk. Zinsen} &= \text{BNK} \times i
+\end{align*}
+\footnotesize AV = Anlagevermögen; UV = Umlaufvermögen
+\end{formelbox}
+
+\begin{tabular}{|L{2.5cm}|L{4.5cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Symbol} & \textbf{Bedeutung} \\
+\hline
+BNK & Betriebsnotwendiges Kapital \\
+AV & Anlagevermögen (ggf. als Durchschnittswert) \\
+UV & Umlaufvermögen (Vorräte, Forderungen, Kasse) \\
+Abzugskapital & Zinslos überlassenes Fremdkapital: Lieferantenverbindlichkeiten, Kundenanzahlungen, unverzinsliche Rückstellungen \\
+$i$ & Kalkulationszinssatz (z.\,B. 8\% p.\,a.) \\
+\hline
+\end{tabular}
+
+\columnbreak
+
+\subsection{Kalk. Unternehmerlohn}
+
+Vergütung für die persönliche Arbeitsleistung des Unternehmers (Einzelunternehmer, Personengesellschafter erhalten kein Gehalt $\to$ Opportunitätskosten).
+
+\begin{formelbox}
+\[
+\text{Kalk. Unternehmerlohn} = 18 \times \sqrt{\text{Jahresumsatz in EUR}}
+\]
+\end{formelbox}
+
+\begin{hinweisbox}
+Wenn der Unternehmer z.\,B. 150.000\,€ Jahresumsatz hat:\\
+$18 \times \sqrt{150.000} = 18 \times 387{,}3 \approx 6.971$\,€
+\end{hinweisbox}
+
+\subsection{Kalk. Wagnisse}
+
+Risikokosten für typische betriebliche Risiken (nicht versicherte Schäden, Forderungsausfälle, Lagerrisiken).
+
+\begin{formelbox}
+\[
+\text{Kalk. Wagnis} = \text{Zuschlagsatz} \times \text{Bezugsgröße}
+\]
+\end{formelbox}
+
+\textbf{Kalk. Wagnisarten:}
+
+\begin{tabular}{|L{2.5cm}|L{4.5cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Wagnis} & \textbf{Bezugsgröße} \\
+\hline
+Bestandswagnis & Materialwert (Lager) \\
+Forderungsausfall- wagnis & Umsatz / Forderungen \\
+Gewährleistungs- wagnis & Herstellkosten der Periode \\
+Anlagenwagnis & Anlagevermögen \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\begin{hinweisbox}
+\textbf{Gesamtübersicht kalk. Kosten in der Klausur:}\\
+Gegeben: Buchwert der Maschine, Nutzungsdauer, Zinssatz\\
+$\Rightarrow$ Berechne: kalk. AfA (WBK $\div$ ND), dann kalk. Zinsen (BNK $\times i$)\\
+Ergebnis fließt in BAB als Gemeinkostenposition ein.
+\end{hinweisbox}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 3 -- MATERIALVERBRAUCH & BEWERTUNG
+% ============================================================
+\section{3 \quad Materialverbrauch: Erfassung und Bewertung}
+
+\begin{multicols}{2}
+
+\subsection{Erfassung des Materialverbrauchs}
+
+\begin{tabular}{|L{2.2cm}|L{1.3cm}|L{1.3cm}|L{2cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Methode} & \textbf{Aufw.} & \textbf{Genau.} & \textbf{Prinzip} \\
+\hline
+Retrograd & gering & gering & $x \times$ Norm \\
+Inventur & mittel & mittel & AB $+$ Z. $-$ EB \\
+Skontration & hoch & hoch & AB $+$ Z. $-$ Abg. \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Retrograde Methode:}
+\begin{formelbox}
+\[\text{Verbrauch} = x \times \text{Sollverbrauch/Einheit}\]
+\footnotesize $x$ = hergestellte Stückzahl
+\end{formelbox}
+
+\textbf{Inventurmethode} (Endbestand durch körperliche Aufnahme):
+\begin{formelbox}
+\[\text{Verbrauch (Abgang)} = \text{AB} + \text{Zugang} - \underbrace{\text{EB}}_{\text{gezählt}}\]
+\end{formelbox}
+
+\textbf{Skontrationsmethode} (Fortschreibung, genaueste Methode):
+\begin{formelbox}
+\[\underbrace{\text{EB}}_{\text{errechnet}} = \text{AB} + \text{Zugang} - \text{Abgang}\]
+\end{formelbox}
+Jede Materialentnahme wird per Entnahmeschein erfasst.
+
+\textbf{Materialarten:}\par
+\begin{tabular}{|L{1.9cm}|L{4.5cm}|}
+\hline
+Rohstoffe & Hauptbestandteil des Produkts (Einzelkosten) \\
+Hilfsstoffe & Nebenbestandteil im Produkt (oft Gemeinkosten) \\
+Betriebsstoffe & Verbraucht, gehen nicht ins Produkt (Gemeinkosten) \\
+\hline
+\end{tabular}
+
+\columnbreak
+
+\subsection{Bewertung des Materialverbrauchs}
+
+\textbf{Zu welchem Preis wird verbrauchtes Material bewertet?}
+
+\begin{tabular}{|L{2.2cm}|L{4.8cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Methode} & \textbf{Prinzip und Wirkung} \\
+\hline
+\textbf{FIFO} & \textit{First In First Out}: Älteste Bestände zuerst verbraucht. Endbestand $=$ aktuelle Preise. Bei steigenden Preisen: niedrige Kosten $\to$ höherer Gewinnausweis. \\
+\hline
+\textbf{LIFO} & \textit{Last In First Out}: Neueste Bestände zuerst. Verbrauch $=$ aktuelle Preise. Bei steigenden Preisen: hohe Kosten $\to$ niedrigerer Gewinnausweis. \\
+\hline
+\textbf{HIFO} & \textit{Highest In First Out}: Teuerste Bestände zuerst. Endbestand zu \textbf{niedrigsten} Preisen. Höchste Kostenverrechnung. \\
+\hline
+\textbf{LOFO} & \textit{Lowest In First Out}: Billigste Bestände zuerst. Endbestand zu \textbf{höchsten} Preisen. Niedrigste Kostenverrechnung. \\
+\hline
+\textbf{Durchschnitt} & Gewogener Ø-Preis aller Zugänge. Periodisch oder permanent. \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Durchschnittspreis-Formel:}
+\begin{formelbox}
+\[
+\bar{p} = \frac{\sum_{i}(\text{Menge}_i \times \text{Preis}_i)}{\sum_{i} \text{Menge}_i}
+\]
+\end{formelbox}
+
+\begin{hinweisbox}
+\textbf{Rechenbeispiel:}\\
+AB: 100\,Stk. à 2\,€; Zugang: 50\,Stk. à 3\,€; Entnahme: 80\,Stk.\\
+\textbf{FIFO:} $80 \times 2 = 160$\,€ \quad \textbf{LIFO:} $50\times 3 + 30\times 2 = 210$\,€\\
+\textbf{Durchschnitt:} $\bar{p} = \frac{200+150}{150} = 2{,}33$\,€ $\to 80\times 2{,}33 = 186{,}67$\,€
+\end{hinweisbox}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 4 -- BETRIEBSABRECHNUNGSBOGEN (BAB)
+% ============================================================
+\section{4 \quad Betriebsabrechnungsbogen (BAB) -- Kostenstellenrechnung}
+
+\begin{multicols}{2}
+
+\subsection{Zweck und Aufbau des BAB}
+
+Der BAB verteilt die Gemeinkosten aus der Kostenartenrechnung verursachungsgerecht auf die Kostenstellen und ermittelt die \textbf{Zuschlagssätze} für die Kalkulation (Stufe~3).
+
+\textbf{Ablauf:}
+\begin{enumerate}[noitemsep, leftmargin=*]
+  \item Primärkosten (aus FIBU/Kostenartenrechnung) eintragen
+  \item Sekundärkosten: Hilfskostenstellen umlegen
+  \item Zuschlagssätze berechnen
+\end{enumerate}
+
+\vspace{4pt}
+\textbf{Typische Kostenstellen im BAB:}
+
+\begin{tabular}{|L{2cm}|L{2.5cm}|L{3cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Stelle} & \textbf{Art} & \textbf{Zuschlag auf \ldots} \\
+\hline
+Material & Hauptkostenstelle & MEK \\
+Fertigung & Hauptkostenstelle & Fertigungslöhne (FL) \\
+Verwaltung & Hauptkostenstelle & Herstellkosten (HK) \\
+Vertrieb & Hauptkostenstelle & Herstellkosten (HK) \\
+Gebäude, Kantine, Fuhrpark & Hilfskostenstelle & wird umgelegt \\
+\hline
+\end{tabular}
+
+\subsection{Zuschlagssätze}
+
+\begin{formelbox}
+\[
+\text{MGK\%} = \frac{\text{Materialgemeinkosten}}{\text{MEK}} \times 100
+\]
+\[
+\text{FGK\%} = \frac{\text{Fertigungsgemeinkosten}}{\text{FL}} \times 100
+\]
+\[
+\text{VwGK\%} = \frac{\text{Verwaltungsgemeinkosten}}{\text{HK}} \times 100
+\]
+\[
+\text{VtGK\%} = \frac{\text{Vertriebsgemeinkosten}}{\text{HK}} \times 100
+\]
+\end{formelbox}
+
+\begin{tabular}{|L{2cm}|L{5cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Abk.} & \textbf{Bedeutung} \\
+\hline
+MEK & Materialeinzelkosten \\
+FL & Fertigungslöhne (= Fertigungseinzelkosten) \\
+HK & Herstellkosten ($= $ MK $+$ FK) \\
+MGK & Materialgemeinkosten \\
+FGK & Fertigungsgemeinkosten \\
+VwGK & Verwaltungsgemeinkosten \\
+VtGK & Vertriebsgemeinkosten \\
+\hline
+\end{tabular}
+
+\columnbreak
+
+\subsection{Umlageverfahren für Hilfskostenstellen}
+
+\textbf{Anbauverfahren} (einfachstes Verfahren):
+\begin{itemize}[noitemsep, leftmargin=*]
+  \item Hilfskostenstellen direkt auf Hauptkostenstellen umgelegt
+  \item Gegenseitige Leistungen zwischen Hilfskostenstellen werden \textbf{ignoriert}
+  \item Ungenauer, aber einfach
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Stufenleiterverfahren} (Treppenumlage):
+\begin{itemize}[noitemsep, leftmargin=*]
+  \item Hilfskostenstellen werden nacheinander abgerechnet
+  \item Reihenfolge: Hilfskostenstelle, die am meisten an andere liefert, zuerst
+  \item Bereits abgerechnete Hilfskostenstellen erhalten \textbf{keine} Umlage mehr
+  \item Einseitige Berücksichtigung der Leistungsbeziehungen
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Gleichungsverfahren} (genauestes Verfahren):
+\begin{itemize}[noitemsep, leftmargin=*]
+  \item Alle gegenseitigen Leistungsbeziehungen vollständig berücksichtigt
+  \item Gleichungssystem aufstellen und lösen
+\end{itemize}
+
+\begin{formelbox}
+\textbf{Beispiel mit 2 Hilfskostenstellen A und B:}\\[4pt]
+$K_A = \text{PK}_A + \alpha_{BA} \cdot K_B$\\[2pt]
+$K_B = \text{PK}_B + \alpha_{AB} \cdot K_A$\\[4pt]
+Gleichungssystem lösen $\Rightarrow$ $K_A$ und $K_B$ einsetzen\\[2pt]
+$\alpha_{BA}$ = Anteil, den B an A liefert
+\end{formelbox}
+
+\begin{hinweisbox}
+\textbf{Klausurhinweis:} Das \textbf{Iterationsverfahren} ist laut Dozent \textbf{nie} in der Klausur vorgekommen. Stufenleiter- und Gleichungsverfahren kennen!
+\end{hinweisbox}
+
+\vspace{4pt}
+\textbf{Normalzuschlagssätze vs. Istzuschlagssätze:}
+
+\begin{tabular}{|L{2.5cm}|L{4.5cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Art} & \textbf{Merkmal} \\
+\hline
+Ist-Zuschlag & Auf Basis tatsächlicher Kosten der Periode \\
+Normal-Zuschlag & Durchschnitt mehrerer Perioden -- glättet Schwankungen \\
+\hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 5 -- KALKULATION (KOSTENTRÄGERRECHNUNG)
+% ============================================================
+\section{5 \quad Kostenträgerrechnung -- Kalkulation (3. Stufe der KLR)}
+
+\begin{multicols}{2}
+
+\subsection{Kalkulationsschema (Zuschlagskalkulation)}
+
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lr@{}}
+Materialeinzelkosten (MEK) & \\
+$+$ Materialgemeinkosten: MEK $\times$ MGK\% & \\
+\hline
+$=$ \textbf{Materialkosten (MK)} & \\[2pt]
+$+$ Fertigungslöhne (FL) & \\
+$+$ Fertigungsgemeinkosten: FL $\times$ FGK\% & \\
+$+$ Sondereinzelkosten Fertigung (SEF) & \\
+\hline
+$=$ \textbf{Fertigungskosten (FK)} & \\[2pt]
+\hline
+$=$ \textbf{Herstellkosten (HK)} $=$ MK $+$ FK & \\[2pt]
+$+$ Verwaltungsgemeinkosten: HK $\times$ VwGK\% & \\
+$+$ Vertriebsgemeinkosten: HK $\times$ VtGK\% & \\
+$+$ Sondereinzelkosten Vertrieb (SEV) & \\
+\hline
+$=$ \textbf{Selbstkosten (SK)} & \\[2pt]
+$+$ Gewinnzuschlag (\%) & \\
+\hline
+$=$ \textbf{Nettoverkaufspreis} & \\
+$+$ MwSt. (19\%) & \\
+\hline
+$=$ \textbf{Bruttoverkaufspreis} & \\
+\end{tabular}
+\end{formelbox}
+
+\subsection{Retrograde Kalkulation (Rückwärts)}
+
+Vom Marktpreis rückwärts zu den maximal erlaubten MEK:
+
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}l@{}}
+Bruttoverkaufspreis \\
+$-$ MwSt. \\
+$=$ Nettoangebotspreis \\
+$-$ Gewinnzuschlag \\
+$=$ Selbstkosten \\
+$-$ VtGK, VwGK, SEV \\
+$=$ Herstellkosten \\
+$-$ FGK, FL, SEF \\
+$=$ Materialkosten \\
+$-$ MGK \\
+$=$ \textbf{max. zulässige MEK} \\
+\end{tabular}
+\end{formelbox}
+
+\columnbreak
+
+\subsection{Divisionskalkulation}
+
+Anwendung: \textbf{Einproduktunternehmen} / homogene Massenfertigung.
+
+\begin{formelbox}
+\[
+k = \frac{K_{\text{gesamt}}}{x}
+\]
+\end{formelbox}
+
+\begin{tabular}{|L{1.5cm}|L{5.5cm}|}
+\hline $k$ & Stückkosten (€/Stück) \\
+$K$ & Gesamtkosten der Periode \\
+$x$ & Produktionsmenge \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Mehrstufige Divisionskalkulation} (mit Lagerbeständen):
+\begin{formelbox}
+\[
+k = \frac{K_1}{x_1} + \frac{K_2}{x_2} + \ldots + \frac{K_n}{x_n}
+\]
+\end{formelbox}
+
+\subsection{Äquivalenzziffernkalkulation}
+
+Anwendung: \textbf{Mehrproduktunternehmen} mit ähnlichen Produkten (unterschiedlicher Ressourcenverbrauch).
+
+\begin{formelbox}
+\[
+k_E = \frac{K_{\text{gesamt}}}{\sum_i (x_i \times \ddot{A}Z_i)}
+\qquad
+k_i = k_E \times \ddot{A}Z_i
+\]
+\end{formelbox}
+
+\begin{tabular}{|L{2cm}|L{5cm}|}
+\hline
+\rowcolor{rowbg}
+$k_E$ & Einheitsstückkosten (Kosten für Referenzprodukt mit $\ddot{A}Z=1$) \\
+$\ddot{A}Z_i$ & Äquivalenzziffer des Produkts $i$ (relativer Kostenbedarf) \\
+$x_i$ & Produktionsmenge des Produkts $i$ \\
+$k_i$ & Stückkosten Produkt $i$ \\
+\hline
+\end{tabular}
+
+\subsection{Prozesskostenkalkulation}
+
+Anwendung: Gemeinkosten werden nach tatsächlicher Ressourcennutzung (Aktivitäten) verrechnet.
+
+\begin{formelbox}
+\[
+\text{Prozesskostensatz} = \frac{\text{Prozesskosten}}{\text{Kostentreibermenge}}
+\]
+\[
+\text{Prozesskosten/Stück} = \sum_j \frac{\text{Prozesskostensatz}_j \times n_j}{x}
+\]
+\end{formelbox}
+
+\begin{tabular}{|L{2cm}|L{5cm}|}
+\hline
+$n_j$ & Anzahl der Aktivitäten des Prozesses $j$ pro Periode \\
+$x$ & Produktionsmenge \\
+\hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 6 -- GEWINNVERTEILUNG & RECHTSFORMEN
+% ============================================================
+\section{6 \quad Gewinnverteilung und Rechtsformen}
+
+\begin{multicols}{2}
+
+\subsection{OHG -- Offene Handelsgesellschaft}
+
+Alle Gesellschafter haften \textbf{unbeschränkt} persönlich.
+
+\begin{formelbox}
+\textbf{Schritt 1: Verzinsung der Kapitaleinlagen mit 4\%}\\[3pt]
+$Z_i = K_i \times 4\%$\\[4pt]
+\textbf{Schritt 2: Restgewinn gleichmäßig pro Kopf}\\[3pt]
+$G_{\text{Rest}} = G - \sum Z_i$\\
+$G_{\text{Rest,\,Kopf}} = G_{\text{Rest}} \div n$\\[4pt]
+\textbf{Schritt 3: Gesamtanteil Gesellschafter $i$}\\[3pt]
+$G_i = Z_i + G_{\text{Rest,\,Kopf}}$
+\end{formelbox}
+
+\begin{tabular}{|L{2cm}|L{5cm}|}
+\hline
+\rowcolor{rowbg}
+$G$ & Jahresgewinn gesamt \\
+$K_i$ & Kapitaleinlage von Gesellschafter $i$ \\
+$n$ & Anzahl der Gesellschafter \\
+$Z_i$ & Verzinsung für Gesellschafter $i$ \\
+\hline
+\end{tabular}
+
+\subsection{KG -- Kommanditgesellschaft}
+
+Komplementär (Kpl): unbeschränkt haftend; Kommanditist (Kdt): haftet nur mit Einlage.
+
+\begin{formelbox}
+\textbf{Schritt 1: Unternehmerlohn für Komplementär}\\[3pt]
+\textbf{Schritt 2: Verzinsung aller Kapitaleinlagen}\\[3pt]
+$Z_i = K_i \times i\%$\\[4pt]
+\textbf{Schritt 3: Restgewinn nach Kapitalanteil}\\[3pt]
+$G_{\text{Rest},i} = G_{\text{Rest}} \times \dfrac{K_i}{\sum_j K_j}$\\[4pt]
+\textbf{Schritt 4: Gesamtanteil = Lohn + Zinsen + Restanteil}
+\end{formelbox}
+
+\columnbreak
+
+\subsection{GmbH}
+
+\begin{formelbox}
+Gewinnverteilung nach Kapitalanteil (Stammeinlage):
+\[
+G_i = G_{\text{gesamt}} \times \frac{\text{Stammeinlage}_i}{\text{Stammkapital gesamt}}
+\]
+\end{formelbox}
+
+\subsection{Rechtsformen im Überblick}
+
+\begin{tabular}{|L{2.3cm}|L{2.5cm}|L{1.5cm}|L{0.8cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Rechtsform} & \textbf{Haftung} & \textbf{Mindest-kapital} & \textbf{GS} \\
+\hline
+Einzel\-unter\-nehmen & unbeschränkt persönl. & -- & 1 \\
+\hline
+GbR & unbeschränkt persönl. & -- & $\geq\!2$ \\
+\hline
+OHG & unbeschränkt persönl. & -- & $\geq\!2$ \\
+\hline
+KG & Kpl: unbeschr.\ Kdt: beschr. & -- & $\geq\!2$ \\
+\hline
+GmbH & nur Gesellschafts-vermögen & 25.000\,€ & $\geq\!1$ \\
+\hline
+AG & nur Gesellschafts-vermögen & 50.000\,€ & $\geq\!1$ \\
+\hline
+\end{tabular}
+
+\subsection{Organisationsformen}
+
+\begin{tabular}{|L{3cm}|L{4.2cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Organisationsform} & \textbf{Merkmal} \\
+\hline
+Einlinie & Ein Vorgesetzter je Mitarbeiter; klare Hierarchie \\
+\hline
+Mehrlinie & Mehrere Vorgesetzte (Fachspezialisten); Kompetenzstreitigkeiten möglich \\
+\hline
+Matrix & Fach- \& Objektverantwortung; Doppelunterstellung \\
+\hline
+Center-/Spartenorg. & Autonome Geschäftsbereiche mit eigenem Ergebnis (Profit Center) \\
+\hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 7 -- KOSTENFUNKTIONEN & VERFAHRENSVERGLEICH
+% ============================================================
+\section{7 \quad Kostenfunktionen, Verfahrensvergleich und Preisuntergrenze}
+
+\begin{multicols}{2}
+
+\subsection{Linearer Kostenverlauf}
+
+\begin{formelbox}
+\[
+K(x) = K_f + k_v \cdot x \qquad \text{(Gesamtkosten)}
+\]
+\[
+k(x) = \underbrace{\frac{K_f}{x}}_{\text{Stückfixkosten}} + k_v \qquad \text{(Stückkosten)}
+\]
+\[
+E(x) = p \cdot x \qquad \text{(Erlösfunktion)}
+\]
+\end{formelbox}
+
+\begin{tabular}{|L{1.8cm}|L{5.2cm}|}
+\hline
+\rowcolor{rowbg}
+$K(x)$ & Gesamtkosten bei Menge $x$ \\
+$K_f$ & Fixkosten (konstant, unabhängig von $x$) \\
+$k_v$ & Variable Stückkosten (€/Stück, konstant) \\
+$k(x)$ & Gesamtstückkosten (fallen mit steigendem $x$) \\
+$E(x)$ & Gesamterlös (Umsatz) \\
+$p$ & Verkaufspreis je Einheit \\
+$x$ & Ausbringungsmenge \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{$k_v$ und $K_f$ aus zwei Punkten ableiten:}
+\begin{formelbox}
+\[
+k_v = \frac{K_2 - K_1}{x_2 - x_1}
+\qquad
+K_f = K_1 - k_v \cdot x_1
+\]
+\end{formelbox}
+
+\subsection{Verfahrensvergleich (kritische Menge)}
+
+Zwei Fertigungsverfahren mit unterschiedlichen Kosten:
+
+\begin{formelbox}
+\[
+x_{\text{krit}} = \frac{K_{f2} - K_{f1}}{k_{v1} - k_{v2}}
+\qquad (\text{mit } K_{f2} > K_{f1},\; k_{v1} > k_{v2})
+\]
+\end{formelbox}
+
+\begin{itemize}[noitemsep, leftmargin=*]
+  \item $x < x_{\text{krit}}$: Verfahren mit \textbf{niedrigeren Fixkosten} (Verfahren 1) günstiger
+  \item $x > x_{\text{krit}}$: Verfahren mit \textbf{niedrigeren variablen Kosten} (Verfahren 2) günstiger
+\end{itemize}
+
+\columnbreak
+
+\subsection{Break-Even-Point (Gewinnschwelle)}
+
+\begin{formelbox}
+\[
+E = K \;\Rightarrow\; p \cdot x_{\text{BEP}} = K_f + k_v \cdot x_{\text{BEP}}
+\]
+\[
+\boxed{x_{\text{BEP}} = \frac{K_f}{p - k_v} = \frac{K_f}{db}}
+\]
+\end{formelbox}
+
+$db = p - k_v$ = Deckungsbeitrag je Stück\\
+Bei $x = x_{\text{BEP}}$: Gewinn = 0. Erst darüber wird Gewinn erzielt.
+
+\subsection{Preisuntergrenze}
+
+\begin{tabular}{|L{2.5cm}|L{5cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Fristigkeit} & \textbf{Preisuntergrenze} \\
+\hline
+\textbf{Kurzfristig} & $p_{\min} = k_v$ (var. Stückkosten)\\
+& Bedingung: $db = p - k_v \geq 0$\\
+& (Fixkosten sind bereits angefallen) \\
+\hline
+\textbf{Langfristig} & $p_{\min} = k$ (Selbstkosten/Stück)\\
+& Alle Kosten inkl. Fixkosten müssen gedeckt sein \\
+\hline
+\end{tabular}
+
+\subsection{Nichtlineare Kostenverläufe}
+
+\begin{tabular}{|L{2.8cm}|L{4.5cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Verlauf} & \textbf{Merkmal} \\
+\hline
+Degressiv (unterproportional) & Grenzkosten sinken mit steigendem $x$ (z.\,B. Mengenrabatte, Lernkurve) \\
+Progressiv (überproportional) & Grenzkosten steigen (z.\,B. Überstundenzuschläge, Maschinenüberlastung) \\
+Ertragsgesetzlich & Erst degressiv, dann progressiv; Wendepunkt = minimale Grenzkosten \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\begin{hinweisbox}
+\textbf{Kostenremanenz:} Bei sinkender Beschäftigung bauen sich Fixkosten nicht sofort ab (Kündigungsfristen, langfristige Verträge). Die Kosten reagieren träge nach unten -- Kostensenkung hinkt der Beschäftigungsabnahme nach.
+\end{hinweisbox}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 8 -- DECKUNGSBEITRAGSRECHNUNG
+% ============================================================
+\section{8 \quad Deckungsbeitragsrechnung (Teilkostenrechnung)}
+
+\begin{multicols}{2}
+
+\subsection{Einstufige Deckungsbeitragsrechnung}
+
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lr@{}}
+Erlös & $E = p \cdot x$ \\
+$-$ Variable Kosten & $K_v = k_v \cdot x$ \\
+\hline
+$=$ \textbf{Deckungsbeitrag} & $\mathbf{DB = E - K_v}$ \\
+$-$ Fixkosten & $K_f$ \\
+\hline
+$=$ \textbf{Gewinn/Verlust} & $G = DB - K_f$ \\
+\end{tabular}
+\end{formelbox}
+
+\textbf{Wichtige Formeln:}
+\begin{formelbox}
+\[
+db = p - k_v \qquad \text{(Stückdeckungsbeitrag)}
+\]
+\[
+DB = db \cdot x \qquad \text{(Gesamt-DB)}
+\]
+\[
+DBR = \frac{db}{p} = \frac{DB}{E} \qquad \text{(Deckungsbeitragsrate)}
+\]
+\[
+x_{\text{BEP}} = \frac{K_f}{db} \qquad \text{(Break-Even-Menge)}
+\]
+\end{formelbox}
+
+\begin{tabular}{|L{2cm}|L{5cm}|}
+\hline
+\rowcolor{rowbg}
+$db$ & Deckungsbeitrag je Stück (€/Stk.) -- Beitrag zur Fixkostendeckung \\
+$DB$ & Gesamt-Deckungsbeitrag (€) \\
+$DBR$ & Deckungsbeitragsrate -- Anteil des DB am Erlös \\
+$K_v$ & Gesamte variable Kosten \\
+$K_f$ & Gesamte Fixkosten (periodengebunden) \\
+\hline
+\end{tabular}
+
+\columnbreak
+
+\subsection{Mehrstufige Deckungsbeitragsrechnung}
+
+Fixkosten werden in Schichten aufgeteilt (Produkt-, Gruppen-, Bereichs-, Unternehmensebene). Zeigt, welche Ebene tatsächlich rentabel ist.
+
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}l@{}}
+Erlöse aller Produkte \\
+$-$ variable Kosten \\
+\hline
+$=$ DB\,I (Stückbeitrag) \\
+$-$ Produktfixkosten (produktspezifisch) \\
+\hline
+$=$ DB\,II (Produktgruppenbeitrag) \\
+$-$ Produktgruppen-Fixkosten \\
+\hline
+$=$ DB\,III (Bereichsbeitrag) \\
+$-$ Bereichsfixkosten \\
+\hline
+$=$ DB\,IV (Unternehmensbeitrag) \\
+$-$ Unternehmensfixkosten \\
+\hline
+$=$ \textbf{Ergebnis (Gewinn / Verlust)} \\
+\end{tabular}
+\end{formelbox}
+
+\textbf{Vorteil:} Produkt mit negativem DB\,I ist schädlich; mit negativem DB\,II aber noch rentabel, wenn Fixkosten bei Streichung nicht wegfallen.
+
+\subsection{Relativer Deckungsbeitrag (Engpassrechnung)}
+
+Bei einem \textbf{Engpass} (knappe Ressource, z.\,B. Maschinenzeit) Produktionsprogramm nach maximalem DB je Engpasseinheit optimieren.
+
+\begin{formelbox}
+\[
+db_{\text{rel}} = \frac{db}{t} \qquad \left[\frac{\text{€}}{\text{Minute}}\right]
+\]
+\end{formelbox}
+
+$t$ = Engpasszeit je Stück auf der Engpassmaschine (in Minuten)
+
+\vspace{4pt}
+\textbf{Vorgehensweise:}
+\begin{enumerate}[noitemsep, leftmargin=*]
+  \item $db_{\text{rel}}$ für jedes Produkt berechnen
+  \item Produkte absteigend nach $db_{\text{rel}}$ sortieren
+  \item Engpasskapazität zuerst dem Produkt mit höchstem $db_{\text{rel}}$ zuteilen
+  \item Weiter bis Kapazität erschöpft; letztes Produkt evtl. anteilig
+\end{enumerate}
+
+\begin{hinweisbox}
+\textbf{Wichtig:} Bei \textbf{keinem} Engpass gilt: Alle Produkte produzieren, die $db > 0$ haben. Erst bei Engpass zählt $db_{\text{rel}}$.
+\end{hinweisbox}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 9 -- BILANZ & BILANZANALYSE
+% ============================================================
+\section{9 \quad Bilanz und Bilanzanalyse}
+
+\begin{multicols}{2}
+
+\subsection{Bilanzstruktur (vereinfacht)}
+
+\begin{tabular}{|L{3.5cm}|L{3.5cm}|}
+\hline
+\rowcolor{rowbg}
+\multicolumn{1}{|c|}{\textbf{AKTIVA}} & \multicolumn{1}{c|}{\textbf{PASSIVA}} \\
+\hline
+\textbf{Anlagevermögen (AV)} & \textbf{Eigenkapital (EK)} \\
+\quad Sachanlagen & \quad Gezeichnetes Kapital \\
+\quad Immaterielle AV & \quad Rücklagen \\
+\quad Finanzanlagen & \quad Jahresüberschuss \\
+\hline
+\textbf{Umlaufvermögen (UV)} & \textbf{Fremdkapital (FK)} \\
+\quad Vorräte & \quad Rückstellungen \\
+\quad Forderungen & \quad Langfristige Verb. ($>$1\,J.) \\
+\quad Wertpapiere & \quad Kurzfristige Verb. ($<$1\,J.) \\
+\quad Flüssige Mittel & \\
+\hline
+Aktive RAP & Passive RAP \\
+\hline
+\textbf{Bilanzsumme} = & \textbf{Bilanzsumme} \\
+\multicolumn{2}{|c|}{$\sum \text{Aktiva} = \sum \text{Passiva}$ \quad (immer!)} \\
+\hline
+\end{tabular}
+
+\subsection{EBIT-Berechnung}
+
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}l@{}}
+Jahresüberschuss / -fehlbetrag \\
+$\pm$ Außerordentliches Ergebnis \\
+$+$ Steueraufwand (Ertragsteuern) \\
+$\pm$ Finanzergebnis (Zinsaufwand $-$ Zinsertrag) \\
+\hline
+$=$ \textbf{EBIT} \\
+\quad (Earnings Before Interest and Taxes) \\
+\end{tabular}
+\end{formelbox}
+
+EBIT = Betriebsergebnis, unabhängig von Finanzierung und Steuern.
+
+\columnbreak
+
+\subsection{Kennzahlen der Bilanzanalyse}
+
+\textbf{Liquiditätskennzahlen:}
+
+\begin{formelbox}
+\[
+L_1 = \frac{\text{Flüssige Mittel}}{\text{kurzfristige Verbindlichkeiten}} \times 100\%
+\]
+\[
+L_2 = \frac{\text{Flüssige Mittel} + \text{kurzfristige Forderungen}}{\text{kurzfristige Verbindlichkeiten}} \times 100\%
+\]
+\[
+L_3 = \frac{\text{Umlaufvermögen}}{\text{kurzfristige Verbindlichkeiten}} \times 100\%
+\]
+\end{formelbox}
+
+\textbf{Richtwerte:} $L_1 \approx 20\%$; $L_2 \approx 100\%$; $L_3 \approx 200\%$
+
+\vspace{4pt}
+\textbf{Kapital- und Ertragskennzahlen:}
+
+\begin{formelbox}
+\[
+\text{Verschuldungsgrad} = \frac{FK}{EK} \times 100\%
+\]
+\[
+\text{Eigenkapitalquote} = \frac{EK}{\text{Gesamtkapital}} \times 100\%
+\]
+\[
+\text{GK-Rendite} = \frac{\text{Gewinn} + \text{FK-Zinsen}}{\text{Gesamtkapital}} \times 100\%
+\]
+\[
+\text{EK-Rendite} = \frac{\text{Gewinn}}{EK} \times 100\%
+\]
+\[
+\text{Umsatzrendite} = \frac{\text{Gewinn}}{\text{Umsatz}} \times 100\%
+\]
+\end{formelbox}
+
+\subsection{Du-Pont-Kennzahlensystem (ROI)}
+
+\begin{formelbox}
+\[
+ROI = \underbrace{\frac{\text{Gewinn}}{\text{Umsatz}}}_{\text{Umsatzrendite}} \times \underbrace{\frac{\text{Umsatz}}{\text{Gesamtkapital}}}_{\text{Kapitalumschlag}}
+= \frac{\text{Gewinn}}{\text{Gesamtkapital}}
+\]
+\end{formelbox}
+
+\textbf{Stellhebel zur ROI-Steigerung:}
+\begin{itemize}[noitemsep, leftmargin=*]
+  \item Umsatzrendite: Kosten senken oder Preise erhöhen
+  \item Kapitalumschlag: Kapital effizienter einsetzen, Lagerbestände reduzieren
+\end{itemize}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 10 -- VWL GRUNDBEGRIFFE & KREISLAUF/BIP
+% ============================================================
+\section{10 \quad VWL: Grundbegriffe und Volkseinkommen (BIP)}
+
+\begin{multicols}{2}
+
+\subsection{Wirtschaftliche Grundbegriffe}
+
+\begin{vwlbox}
+\[
+\text{Wirtschaftlichkeit} = \frac{\text{Leistung (Output)}}{\text{Kosten (Input)}} \;\geq 1
+\]
+\[
+\text{Produktivität} = \frac{\text{Produktionsmenge (Output)}}{\text{Faktoreinsatz (Input)}}
+\]
+\[
+\text{Umsatzrendite} = \frac{\text{Gewinn}}{\text{Umsatz}} \times 100\%
+\]
+\[
+\text{Kapitalrendite} = \frac{\text{Gewinn}}{\text{eingesetztes Kapital}} \times 100\%
+\]
+\end{vwlbox}
+
+\textbf{Ökonomisches Prinzip:}
+
+\begin{tabular}{|L{2.5cm}|L{4.5cm}|}
+\hline
+\rowcolor{rowvwl}
+\textbf{Prinzip} & \textbf{Ziel} \\
+\hline
+Maximalprinzip & Mit gegebenem Input $\to$ maximalen Output erreichen \\
+\hline
+Minimalprinzip & Bestimmten Output $\to$ mit minimalem Input erreichen \\
+\hline
+\end{tabular}
+
+\subsection{Wirtschaftskreislauf}
+
+\textbf{Einfacher Kreislauf} (2 Sektoren):
+\begin{itemize}[noitemsep, leftmargin=*]
+  \item Haushalte $\leftrightarrow$ Unternehmen
+  \item Faktoren (Arbeit/Kapital/Boden) gegen Einkommen; Güter gegen Konsum
+\end{itemize}
+
+\textbf{Erweiterter Kreislauf} (+\,Banken/Staat):
+\begin{itemize}[noitemsep, leftmargin=*]
+  \item Banken: Vermittlung Spareinlagen zu Investitionskrediten
+  \item Staat: Steuern, Transferzahlungen, öffentliche Ausgaben
+\end{itemize}
+
+\textbf{Vollständiger Kreislauf} (5 Sektoren: Haushalte, Unternehmen, Banken, Staat, Ausland)
+
+\columnbreak
+
+\subsection{BIP -- Berechnungsmethoden}
+
+\textbf{Entstehungsrechnung:}
+\begin{vwlbox}
+\[
+\text{Produktionswert} - \text{Vorleistungen} = \text{Bruttowertschöpfung}
+\]
+\[
++ \text{Gütersteuern} - \text{Gütersubventionen} = \mathbf{BIP}
+\]
+\end{vwlbox}
+
+\textbf{Verwendungsrechnung:}
+\begin{vwlbox}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}l@{}}
+Privater Konsum ($C$) \\
+$+$ Staatlicher Konsum ($G$) \\
+$+$ Bruttoinvestitionen ($I$) \\
+$+$ Außenbeitrag (Exporte $-$ Importe) \\
+\hline
+$=$ \textbf{BIP} \\
+\end{tabular}
+\end{vwlbox}
+
+\textbf{Verteilungsrechnung:}
+\begin{vwlbox}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}l@{}}
+Arbeitnehmerentgelt \\
+$+$ Unternehmens- und Vermögenseinkommen \\
+\hline
+$=$ Volkseinkommen (NSOz.Fakt.) \\
+$+$ Produktions- und Importabgaben \\
+$-$ Subventionen + Abschreibungen + Saldo \\
+\hline
+$=$ \textbf{BIP} \\
+\end{tabular}
+\end{vwlbox}
+
+\textbf{Weitere BIP-Formeln:}
+\begin{vwlbox}
+\[
+\text{BIP}_{\text{real}} = \frac{\text{BIP}_{\text{nominal}}}{\text{Preisindex}} \times 100
+\]
+\begin{align*}
+\text{BNE} &= \text{BIP} - \text{Inlandseinkommen Ausländer}\\
+           &\quad + \text{Auslandseinkommen Inländer}
+\end{align*}
+\begin{align*}
+\text{NEW} &= \text{BIP} - \text{soziale Kosten}\\
+           &\quad + \text{private Dienste (unentgeltlich)}
+\end{align*}
+\end{vwlbox}
+
+\begin{tabular}{|L{2cm}|L{5cm}|}
+\hline
+\rowcolor{rowvwl}
+BNE & Bruttonationaleinkommen (nach Inländerprinzip) \\
+NEW & Net Economic Welfare (Nettowohlstandsindikator) \\
+\hline
+\end{tabular}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 11 -- GELD, GELDMENGE & GELDPOLITIK
+% ============================================================
+\section{11 \quad Geldmengen, Geldschöpfung und EZB-Instrumente}
+
+\begin{multicols}{2}
+
+\subsection{Geldmengenaggregate der EZB}
+
+\begin{tabular}{|L{1cm}|L{6cm}|}
+\hline
+\rowcolor{rowvwl}
+\textbf{M0} & Zentralbankgeld: Bargeld im Umlauf + Mindestreserveguthaben der Banken bei EZB (Geldbasis) \\
+\hline
+\textbf{M1} & M0 $+$ Sichteinlagen (täglich fällige Girokonten) \\
+\hline
+\textbf{M2} & M1 $+$ Einlagen mit Laufzeit $\leq 2$ Jahre oder Kündigungsfrist $\leq 3$ Monate \\
+\hline
+\textbf{M3} & M2 $+$ Geldmarktfondsanteile $+$ Repogeschäfte $+$ Bankschuldverschreibungen ($\leq 2$ J.) \\
+\hline
+\end{tabular}
+
+\textbf{Merkhilfe:} M1 $\subset$ M2 $\subset$ M3 (jede Menge enthält die vorherige vollständig)
+
+\subsection{Geldschöpfungsmultiplikator}
+
+Geschäftsbanken können durch Kreditvergabe neues Buchgeld schaffen (Giralgeldschöpfung).
+
+\begin{vwlbox}
+\[
+m = \frac{1}{r + b}
+\]
+\[
+\Delta M = m \times \Delta Z\!B\text{-}{\text{Geld}}
+\]
+\end{vwlbox}
+
+\begin{tabular}{|L{1.5cm}|L{5.5cm}|}
+\hline
+\rowcolor{rowvwl}
+$m$ & Geldschöpfungsmultiplikator \\
+$r$ & Mindestreservesatz (MRS): Pflichtanteil der Einlagen bei EZB \\
+$b$ & Barreservesatz (BRS): Anteil, den Banken als Bargeld im Tresor halten \\
+$\Delta M$ & Gesamte Geldmengenausweitung durch Multiplikation \\
+\hline
+\end{tabular}
+
+\columnbreak
+
+\subsection{Tenderverfahren der EZB}
+
+\textbf{Mengentender} (Festzinssatz):
+\begin{vwlbox}
+\[
+\text{Repartierungsquote} = \frac{\text{Zuteilungsbetrag}}{\sum \text{Gebote aller Banken}} \times 100\%
+\]
+\end{vwlbox}
+EZB legt Zinssatz und Zuteilungsbetrag fest. Alle Banken erhalten denselben prozentualen Anteil ihrer Gebote.
+
+\vspace{4pt}
+\textbf{Zinstender} (variabler Zinssatz):
+\begin{itemize}[noitemsep, leftmargin=*]
+  \item Banken bieten Zinssatz und Betrag
+  \item Höchste Zinssätze werden zuerst bedient
+  \item EZB legt Mindestbietungssatz $=$ Leitzins fest
+\end{itemize}
+
+\subsection{EZB-Leitzinsen und Geldpolitikinstrumente}
+
+\begin{tabular}{|L{3.5cm}|L{4cm}|}
+\hline
+\rowcolor{rowvwl}
+\textbf{Instrument} & \textbf{Funktion} \\
+\hline
+Haupt\-refi\-nan\-zie\-rungs\-geschäft & Wochentender; Standardinstrument; Leitzins \\
+\hline
+Spitzen\-refi\-nan\-zie\-rungs\-fazilität & Übernachtkredite; obere Zinsgrenze (Ceiling) \\
+\hline
+Einlagefazilität & Übernachteinlagen bei EZB; untere Zinsgrenze (Floor) \\
+\hline
+Offenmarktgeschäfte & Kauf/Verkauf von Wertpapieren am offenen Markt (kurz- bis langfristig) \\
+\hline
+Mindestreservepolitik & Pflichtreservesatz senken $\to$ mehr Kreditvergabe möglich \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Wirkungskette Leitzinserhöhung (kontraktive Geldpolitik):}
+\begin{itemize}[noitemsep, leftmargin=*]
+  \item $\uparrow$ Leitzins $\to$ $\uparrow$ Refinanzierungskosten der Banken
+  \item $\to$ $\uparrow$ Kreditzinsen $\to$ $\downarrow$ Kreditnachfrage
+  \item $\to$ $\downarrow$ Investitionen, $\downarrow$ Konsum $\to$ $\downarrow$ Inflation
+\end{itemize}
+
+\textbf{Wirkungskette Leitzinssenkung (expansive Geldpolitik):}
+\begin{itemize}[noitemsep, leftmargin=*]
+  \item $\downarrow$ Leitzins $\to$ $\downarrow$ Kreditkosten $\to$ $\uparrow$ Kredite $\to$ $\uparrow$ Investitionen $\to$ $\uparrow$ BIP
+\end{itemize}
+
+\end{multicols}
+
+\newpage
+
+% ============================================================
+%  SEITE 12 -- INFLATION, MARKTFORMEN & PREISELASTIZITÄT
+% ============================================================
+\section{12 \quad Inflation, Marktformen und Preiselastizität}
+
+\begin{multicols}{2}
+
+\subsection{Inflation}
+
+\begin{vwlbox}
+\[
+\text{Inflationsrate} = \frac{P_t - P_{t-1}}{P_{t-1}} \times 100\%
+\]
+\end{vwlbox}
+
+\begin{tabular}{|L{3.5cm}|L{3.5cm}|}
+\hline
+\rowcolor{rowvwl}
+\textbf{Art} & \textbf{Rate / Merkmal} \\
+\hline
+Schleichende Inflation & $< 5\%$ p.\,a. -- kaum spürbar \\
+Trabende Inflation & $5\text{--}20\%$ p.\,a. \\
+Galoppierende Inflation & $> 20\%$ p.\,a. -- wirtschaftsschädigend \\
+Hyperinflation & $> 50\%$ pro Monat (nach Cagan) \\
+\hline
+Offene Inflation & Preise steigen tatsächlich \\
+Verdeckte Inflation & Preise staatlich gedeckelt; Güterknappheit und Schwarzmarkt \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Binnenwert des Geldes:} Kaufkraft im Inland -- sinkt bei Inflation \\
+\textbf{Außenwert des Geldes:} Wechselkurs -- Verhältnis zu Fremdwährungen
+
+\subsection{Marktformmatrix}
+
+\begin{tabular}{|C{1.8cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+\hline
+\rowcolor{rowvwl}
+& \multicolumn{3}{c|}{\textbf{Anbieter}} \\
+\rowcolor{rowvwl}
+\textbf{Nachfrager} & Viele & Wenige & Einer \\
+\hline
+\textbf{Viele} & Polypol & Oligopol & Monopol \\
+\textbf{Wenige} & Nachfrage-oligopol & Bilat. Oligopol & Beschr. Monopol \\
+\textbf{Einer} & Monopson & Beschr. Monopson & Bilat. Monopol \\
+\hline
+\end{tabular}
+
+\columnbreak
+
+\subsection{Preiselastizität der Nachfrage}
+
+\begin{vwlbox}
+\[
+\varepsilon = \frac{\Delta Q / Q}{\Delta P / P}
+= \frac{\Delta Q}{\Delta P} \times \frac{P}{Q}
+\]
+\end{vwlbox}
+
+\begin{tabular}{|L{1.8cm}|L{2.2cm}|L{3cm}|}
+\hline
+\rowcolor{rowvwl}
+\textbf{Wert $|\varepsilon|$} & \textbf{Bezeichnung} & \textbf{Bedeutung} \\
+\hline
+$\to \infty$ & Vollkommen elastisch & Kleinste Preisänderung $\Rightarrow$ unendliche Mengenänderung (z.\,B. homog. Markt) \\
+\hline
+$> 1$ & Elastisch & \%\,Mengenänd. $>$ \%\,Preisänd. (Luxusgüter, Substitute vorhanden) \\
+\hline
+$= 1$ & Proportional (unitär) & \%\,Mengenänd. $=$ \%\,Preisänd. \\
+\hline
+$< 1$ & Unelastisch & \%\,Mengenänd. $<$ \%\,Preisänd. (Grundbedarf, keine Substitute) \\
+\hline
+$= 0$ & Vollkommen unelastisch & Preisänderung hat keinen Einfluss auf Menge \\
+\hline
+$> 0$ (positiv) & Anormal (Giffen) & Preiserhöhung $\Rightarrow$ mehr Nachfrage (inferiore Güter) \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\begin{tabular}{|L{2cm}|L{5cm}|}
+\hline
+\rowcolor{rowvwl}
+$\varepsilon$ & Preiselastizitätskoeffizient \\
+$\Delta Q$ & Absolute Änderung der Nachfragemenge \\
+$Q$ & Ausgangsmenge \\
+$\Delta P$ & Absolute Preisänderung \\
+$P$ & Ausgangspreis \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Umsatzwirkung einer Preiserhöhung:}\par
+\begin{tabular}{|L{3cm}|L{4cm}|}
+\hline
+$|\varepsilon| > 1$ (elastisch) & Preis $\uparrow$ $\Rightarrow$ Umsatz $\downarrow$ \\
+$|\varepsilon| < 1$ (unelastisch) & Preis $\uparrow$ $\Rightarrow$ Umsatz $\uparrow$ \\
+$|\varepsilon| = 1$ (unitär) & Preis $\uparrow$ $\Rightarrow$ konstant \\
+\hline
+\end{tabular}
+
+\begin{hinweisbox}
+\textbf{Vorzeichen:} Preiselastizität ist normalerweise \textbf{negativ} (Preis $\uparrow$ $\to$ Menge $\downarrow$). Bei Giffen-Gütern positiv. In der Praxis oft als Absolutbetrag $|\varepsilon|$ angegeben.
+\end{hinweisbox}
+
+\end{multicols}
+
+\vspace{6pt}
+{\color{bwlblue}\hrule height 1pt}
+\vspace{3pt}
+{\small\centering\textbf{Ende der Formelsammlung} -- Alle Formeln sind prüfungsrelevant. Schwerpunkt Klausur: 3 Stufen der KLR (Seiten 1--5), Deckungsbeitragsrechnung (Seite 8), BIP (Seite 10), Geldpolitik (Seite 11).}
+
+\end{document}
