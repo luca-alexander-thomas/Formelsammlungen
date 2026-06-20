@@ -11,19 +11,21 @@
 \usetikzlibrary{calc, positioning}
 \usepackage{booktabs}
 \usepackage{xcolor}
-\usepackage[automark,headsepline,footsepline]{scrlayer-scrpage}
+\usepackage[headsepline,footsepline]{scrlayer-scrpage}
+\graphicspath{{pictures/}}
 
 \renewcommand{\arraystretch}{1.5}
 \definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
 \tikzset{hint/.style={->, >=latex, thick, darkgreen}}
 
-\begin{document}
-
 \pagestyle{scrheadings}
 \clearpairofpagestyles
+\automark[section]{section}
 \ihead{Formelsammlung GET 2 -- 2026}
 \ohead{\headmark}
 \cfoot{\pagemark}
+
+\begin{document}
 
 \section{Foliensatz 1}
 
