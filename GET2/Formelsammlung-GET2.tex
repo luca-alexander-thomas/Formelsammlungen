@@ -4,27 +4,26 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage[ngerman]{babel}
-\usepackage[a4paper,margin=1.5cm]{geometry}
+\usepackage[a4paper,margin=1.5cm,bottom=2.5cm]{geometry}
 \usepackage{array}
 \usepackage{tikz}
 \usepackage{circuitikz}
 \usetikzlibrary{calc, positioning}
 \usepackage{booktabs}
 \usepackage{xcolor}
-\usepackage{fancyhdr}
+\usepackage[headsepline,footsepline]{scrlayer-scrpage}
 \graphicspath{{pictures/}}
 
 \renewcommand{\arraystretch}{1.5}
 \definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
 \tikzset{hint/.style={->, >=latex, thick, darkgreen}}
 
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{Formelsammlung GET 2 -- 2026}
-\rhead{\leftmark}
-\cfoot{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\automark[section]{section}
+\ihead{Formelsammlung GET 2 -- 2026}
+\ohead{\headmark}
+\cfoot{\pagemark}
 
 \begin{document}
 
@@ -208,6 +207,8 @@ $R_2 = R_1\cdot\dfrac{X_1^2}{R_1^2 + X_1^2}$ & $X_2 = X_1\cdot\dfrac{R_1^2}{R_1^
 \hspace*{20mm} $\omega/\omega_0$ bei max.\ $|\underline{U}_C|$ & $\dfrac{\omega_{max}}{\omega_0} = \sqrt{1 - \dfrac{1}{2Q^2}}$ \\
 \hspace*{20mm} $\omega/\omega_0$ bei max.\ $|\underline{U}_L|$ & $\dfrac{\omega_{max}}{\omega_0} = \dfrac{1}{\sqrt{1 - \dfrac{1}{2Q^2}}}$ \\[3mm]
 \end{tabular}
+
+\newpage
 
 \noindent\textbf{GLC-Parallelschwingkreis}
 
