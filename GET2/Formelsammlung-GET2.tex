@@ -4,26 +4,27 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage[ngerman]{babel}
-\usepackage[a4paper,margin=1.5cm,includehead,includefoot]{geometry}
+\usepackage[a4paper,margin=1.5cm]{geometry}
 \usepackage{array}
 \usepackage{tikz}
 \usepackage{circuitikz}
 \usetikzlibrary{calc, positioning}
 \usepackage{booktabs}
 \usepackage{xcolor}
-\usepackage[headsepline,footsepline]{scrlayer-scrpage}
+\usepackage{fancyhdr}
 \graphicspath{{pictures/}}
 
 \renewcommand{\arraystretch}{1.5}
 \definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
 \tikzset{hint/.style={->, >=latex, thick, darkgreen}}
 
-\pagestyle{scrheadings}
-\clearpairofpagestyles
-\automark[section]{section}
-\ihead{Formelsammlung GET 2 -- 2026}
-\ohead{\headmark}
-\cfoot{\pagemark}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Formelsammlung GET 2 -- 2026}
+\rhead{\leftmark}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
 \begin{document}
 
@@ -150,11 +151,15 @@ $R_2 = R_1\cdot\dfrac{X_1^2}{R_1^2 + X_1^2}$ & $X_2 = X_1\cdot\dfrac{R_1^2}{R_1^
 \subsection{Leistung an der Spule}
 \begin{tabular}{@{} l l @{}}
 \hspace*{20mm} Scheinleistung & $S = U\cdot I = \dfrac{U^2}{\omega L} > 0$ \\
+\hspace*{20mm} Wirkleistung & $P_W = 0$ \\
+\hspace*{20mm} Blindleistung & $P_B = S = \omega L\cdot I^2 = \dfrac{U^2}{\omega L}$ \\
 \end{tabular}
 
 \subsection{Leistung am Kondensator}
 \begin{tabular}{@{} l l @{}}
 \hspace*{20mm} Scheinleistung & $S = -U\cdot I = -\omega C\cdot U^2 < 0$ \\
+\hspace*{20mm} Wirkleistung & $P_W = 0$ \\
+\hspace*{20mm} Blindleistung & $P_B = S = -\omega C\cdot U^2 = -\dfrac{I^2}{\omega C}$ \\
 \end{tabular}
 
 \subsection{Leistung bei komplexer Wechselspannung}
@@ -170,9 +175,15 @@ $R_2 = R_1\cdot\dfrac{X_1^2}{R_1^2 + X_1^2}$ & $X_2 = X_1\cdot\dfrac{R_1^2}{R_1^
 
 \subsection{Leistungsanpassung}
 \begin{tabular}{@{} l l @{}}
-\hspace*{20mm} Anpassungsbedingung & $\underline{Z}_L = \underline{Z}_i^*$ \\
+\hspace*{20mm} Anpassungsbedingung (Wirkleistungsanpassung) & $\underline{Z}_L = \underline{Z}_i^*$ \\
+\hspace*{20mm} \quad entspricht & $R_L = Re(\underline{Z}_i)$, \quad $X_L = -Im(\underline{Z}_i)$ \\
 \hspace*{20mm} Maximale Wirkleistung an Last & $P_{W,max} = \dfrac{|\underline{U}_0|^2}{4\cdot Re(\underline{Z}_i)}$ \\
 \hspace*{20mm} Wirkungsgrad bei Anpassung & $\eta_W = 50\%$ \\
+\hspace*{20mm} Reelle Quellenimpedanz ($\underline{Z}_i = R_i$) & $R_L = R_i$, \quad $X_L = 0$ \\
+\hspace*{20mm} Betragsanpassung & $|\underline{Z}_L| = |\underline{Z}_i|$ \\[3mm]
+\multicolumn{2}{l}{\textbf{Maximierung der Blindleistung}} \\
+\hspace*{20mm} Bedingung & $R_L = 0$, \quad $X_L = |\underline{Z}_i| = \sqrt{R_i^2 + X_i^2}$ \\
+\hspace*{20mm} Maximale Blindleistung & $Q_{max} = \dfrac{|\underline{U}_0|^2}{2\!\left(|\underline{Z}_i| + X_i\right)}$ \\
 \end{tabular}
 
 \subsection{Schwingkreise}
@@ -194,6 +205,8 @@ $R_2 = R_1\cdot\dfrac{X_1^2}{R_1^2 + X_1^2}$ & $X_2 = X_1\cdot\dfrac{R_1^2}{R_1^
 \hspace*{20mm} Gesamtimpedanz & $\underline{Z}_{ges} = R + j\!\left(\omega L - \dfrac{1}{\omega C}\right)$ \\
 \hspace*{20mm} Resonanz ($Im = 0$ bei $\omega = \omega_0$) & $|\underline{Z}_{ges}|_{min} = R$ \\
 \hspace*{20mm} Amplitudengang Strom & $|\underline{I}| = \dfrac{U_0}{R\cdot\sqrt{1 + Q^2\!\left(\dfrac{\omega}{\omega_0} - \dfrac{\omega_0}{\omega}\right)^2}}$ \\[3mm]
+\hspace*{20mm} $\omega/\omega_0$ bei max.\ $|\underline{U}_C|$ & $\dfrac{\omega_{max}}{\omega_0} = \sqrt{1 - \dfrac{1}{2Q^2}}$ \\
+\hspace*{20mm} $\omega/\omega_0$ bei max.\ $|\underline{U}_L|$ & $\dfrac{\omega_{max}}{\omega_0} = \dfrac{1}{\sqrt{1 - \dfrac{1}{2Q^2}}}$ \\[3mm]
 \end{tabular}
 
 \noindent\textbf{GLC-Parallelschwingkreis}
@@ -205,6 +218,18 @@ $R_2 = R_1\cdot\dfrac{X_1^2}{R_1^2 + X_1^2}$ & $X_2 = X_1\cdot\dfrac{R_1^2}{R_1^
 \hspace*{20mm} Gesamtadmittanz & $\underline{Y}_{ges} = G + j\!\left(\omega C - \dfrac{1}{\omega L}\right)$ \\
 \hspace*{20mm} Resonanz ($Im = 0$ bei $\omega = \omega_0$) & $|\underline{Y}_{ges}|_{min} = G$ \\
 \hspace*{20mm} Bandbreite & $B = f_2 - f_1 = \dfrac{f_0}{Q}$ \\
+\end{tabular}
+
+\vspace*{3mm}
+\noindent\textbf{Eigenfrequenz (gedämpfter Schwingkreis)}
+
+\begin{tabular}{@{} l l @{}}
+\hspace*{20mm} Ungedämpfte Eigenfrequenz & $\omega_0 = \dfrac{1}{\sqrt{L\cdot C}}$, \quad $f_0 = \dfrac{1}{2\pi\sqrt{L\cdot C}}$ \\
+\hspace*{20mm} Dämpfungskonstante (Reihenkreis) & $\delta = \dfrac{R}{2L}$ \\
+\hspace*{20mm} Dämpfungskonstante (Parallelkreis) & $\delta = \dfrac{1}{2RC}$ \\
+\hspace*{20mm} Gedämpfte Eigenfrequenz & $\omega_d = \sqrt{\omega_0^2 - \delta^2}$ \\
+\hspace*{20mm} Dämpfungsgrad & $D = \dfrac{\delta}{\omega_0} = \dfrac{1}{2Q}$ \\
+\hspace*{20mm} Schwingbedingung & $\delta < \omega_0 \;\Leftrightarrow\; D < 1$ \\
 \end{tabular}
 
 
@@ -307,7 +332,24 @@ $R_2 = R_1\cdot\dfrac{X_1^2}{R_1^2 + X_1^2}$ & $X_2 = X_1\cdot\dfrac{R_1^2}{R_1^
 \multicolumn{2}{l}{\textbf{Beispiel: RL-Admittanz}} \\
 \hspace*{20mm} Admittanz & $\underline{Y}(\omega) = \dfrac{1}{R + j\omega L}$ \\
 \hspace*{20mm} Betrag & $|\underline{Y}(\omega)| = \dfrac{1}{\sqrt{R^2 + (\omega L)^2}}$ \\
-\hspace*{20mm} Phase & $\varphi_Y(\omega) = -\arctan\!\left(\dfrac{\omega L}{R}\right)$ \\
+\hspace*{20mm} Phase & $\varphi_Y(\omega) = -\arctan\!\left(\dfrac{\omega L}{R}\right)$ \\[3mm]
+
+\multicolumn{2}{l}{\textbf{Impedanz-Ortskurven: Realteil \& Imaginärteil}} \\[1mm]
+\multicolumn{2}{l}{\textit{RL-Reihenschaltung:} \enspace $\underline{Z} = R + j\omega L$} \\
+\hspace*{20mm} Realteil & $Re(\underline{Z}) = R = \text{const}$ \\
+\hspace*{20mm} Imaginärteil & $Im(\underline{Z}) = \omega L \;\geq 0$ \\
+\multicolumn{2}{l}{\quad $\Rightarrow$ Ortskurve: Parallele zur $\mathrm{Im}$-Achse bei $Re = R$} \\[2mm]
+\multicolumn{2}{l}{\textit{RC-Reihenschaltung:} \enspace $\underline{Z} = R - \dfrac{j}{\omega C}$} \\
+\hspace*{20mm} Realteil & $Re(\underline{Z}) = R = \text{const}$ \\
+\hspace*{20mm} Imaginärteil & $Im(\underline{Z}) = -\dfrac{1}{\omega C} \;\leq 0$ \\[2mm]
+\multicolumn{2}{l}{\textit{RL-Parallelschaltung:} \enspace $\underline{Z} = \dfrac{j\omega LR}{R + j\omega L}$} \\
+\hspace*{20mm} Realteil & $Re(\underline{Z}) = \dfrac{R\,(\omega L)^2}{R^2 + (\omega L)^2}$ \\
+\hspace*{20mm} Imaginärteil & $Im(\underline{Z}) = \dfrac{R^2\,\omega L}{R^2 + (\omega L)^2}$ \\
+\multicolumn{2}{l}{\quad $\Rightarrow$ Halbkreis, Radius $R/2$, Mittelpunkt $(R/2,\,0)$} \\[2mm]
+\multicolumn{2}{l}{\textit{RC-Parallelschaltung:} \enspace $\underline{Z} = \dfrac{R}{1 + j\omega RC}$} \\
+\hspace*{20mm} Realteil & $Re(\underline{Z}) = \dfrac{R}{1 + (\omega RC)^2}$ \\
+\hspace*{20mm} Imaginärteil & $Im(\underline{Z}) = -\dfrac{\omega R^2 C}{1 + (\omega RC)^2}$ \\
+\multicolumn{2}{l}{\quad $\Rightarrow$ Halbkreis, Radius $R/2$, Mittelpunkt $(R/2,\,0)$} \\
 
 \end{tabular}
 
