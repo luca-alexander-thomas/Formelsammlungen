@@ -256,6 +256,45 @@ $i$ & Kalkulationszinssatz (z.\,B. 8\% p.\,a.) \\
 
 \columnbreak
 
+\subsection{WBK mit Inflationsanpassung}
+
+Wenn die Anlage bei steigenden Preisen ersetzt werden muss, gilt:
+
+\begin{formelbox}
+\[
+\text{WBK} = \text{AK} \times \left(1 + i_{\text{Inflation}}\right)^{n} % chktex 3
+\]
+\[
+\text{Kalk. AfA} = \frac{\text{WBK}}{\text{kalk. ND}}
+\]
+\end{formelbox}
+
+\begin{tabular}{|L{2.5cm}|L{4.5cm}|}
+\hline
+\rowcolor{rowbg}
+AK & Anschaffungskosten (historisch) \\
+$i_{\text{Inflation}}$ & Inflationsrate p.\,a. \\
+$n$ & kalk. Nutzungsdauer in Jahren \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\begin{hinweisbox}
+\textbf{Beispiel:} AK = 500.000\,€, $i=1\%$, ND = 13\,J.\\
+WBK $= 500.000 \times 1{,}01^{13} = 569.047$\,€
+\end{hinweisbox}
+
+\subsection{Wechsel: Degressiv $\to$ Linear}
+
+Sobald die lineare AfA den degressiven Betrag überschreitet, wechseln:
+
+\begin{formelbox}
+\[
+\text{AfA}_{\text{linear}} = \frac{\text{RBW}_t}{\text{Restnutzungsjahre}} \quad > \quad \text{RBW}_t \times p\%
+\]
+$\Rightarrow$ Ab diesem Zeitpunkt lineare AfA anwenden.
+\end{formelbox}
+
 \subsection{Kalk. Unternehmerlohn}
 
 Vergütung für die persönliche Arbeitsleistung des Unternehmers (Einzelunternehmer, Personengesellschafter erhalten kein Gehalt $\to$ Opportunitätskosten).
@@ -555,6 +594,21 @@ $=$ \textbf{Bruttoverkaufspreis} & \\
 \end{tabular}
 \end{formelbox}
 
+\subsection{Bestandsveränderungen: HK der Produktion vs. HK des Umsatzes}
+
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}l@{}}
+Herstellkosten der \textbf{Produktion} \\
+$-$ Mehrbestand an unfertigen/fertigen Erzeugnissen \\
+$+$ Minderbestand an unfertigen/fertigen Erzeugnissen \\
+\hline
+$=$ \textbf{Herstellkosten des Umsatzes} \\
+\end{tabular}
+\end{formelbox}
+
+{\footnotesize Mehrbestand = mehr produziert als verkauft (aktiviert); Minderbestand = mehr verkauft als produziert.}
+
 \subsection{Retrograde Kalkulation (Rückwärts)}
 
 Vom Marktpreis rückwärts zu den maximal erlaubten MEK:
@@ -575,6 +629,50 @@ $-$ MGK \\
 $=$ \textbf{max. zulässige MEK} \\
 \end{tabular}
 \end{formelbox}
+
+\subsection{Preisabbauleiter (mit Rabatt, Skonto, Provision)}
+
+\textbf{Progressiv} (Listenpreis $\to$ Angebotspreis):
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}l@{}}
+Selbstkosten \\
+$+$ Gewinnzuschlag (\%) \\
+\hline
+$=$ Bar-Verkaufspreis \\
+$+$ Kundenskonto (\%, auf Zielverkaufspreis) \\
+\hline
+$=$ Zielverkaufspreis \\
+$+$ Provision / Rabatt (\%) \\
+\hline
+$=$ \textbf{Listenpreis (Angebotspreis)} \\
+$+$ MwSt.\ (19\,\%) \\
+\hline
+$=$ \textbf{Bruttolistenpreis} \\
+\end{tabular}
+\end{formelbox}
+
+\textbf{Retrograd} (Listenpreis $\to$ MEK):
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}l@{}}
+Bruttolistenpreis \\
+$\div\,(1{,}19)$ \\
+$=$ Nettolistenpreis \\
+$-$ Händlerrabatt (\%) \\
+$=$ Zielverkaufspreis \\
+$-$ Kundenskonto (\%) \\
+$=$ Bar-Verkaufspreis \\
+$-$ Provision (\%) \\
+$=$ Nettoerlös / Angebotspreis (Netto) \\
+$-$ Gewinnzuschlag \\
+$=$ Selbstkosten $\to$ weiter rückwärts zu MEK \\
+\end{tabular}
+\end{formelbox}
+
+\begin{hinweisbox}
+\textbf{Achtung:} Rabatt und Skonto werden auf den \textbf{vorherigen Preis} (nicht Selbstkosten) berechnet. Reihenfolge: Rabatt $\to$ Skonto $\to$ Provision $\to$ Gewinn.
+\end{hinweisbox}
 
 \columnbreak
 
@@ -703,6 +801,21 @@ Gewinnverteilung nach Kapitalanteil (Stammeinlage):
 G_i = G_{\text{gesamt}} \times \frac{\text{Stammeinlage}_i}{\text{Stammkapital gesamt}}
 \]
 \end{formelbox}
+
+\textbf{Mit Vorabausschüttung und Rücklage:}
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}l@{}}
+Jahresüberschuss \\
+$-$ Einstellung in Rücklage \\
+$+$ Entnahme aus Rücklage \\
+\hline
+$=$ \textbf{Ausschüttbarer Gewinn} \\
+$\to$ Verteilung nach Kapitalanteilen \\
+\end{tabular}
+\end{formelbox}
+
+\textbf{OHG mit Risikoprämie:} Restgewinn kann auch nach Haftungsrisiko verteilt werden (z.\,B. proportional zur Haftungseinlage anstelle gleichmäßig pro Kopf).
 
 \subsection{Rechtsformen im Überblick}
 
@@ -1132,6 +1245,19 @@ Minimalprinzip & Bestimmten Output $\to$ mit minimalem Input erreichen \\
 
 \columnbreak
 
+\subsection{Wirtschaftskreislauf: Sektorformeln}
+
+\textbf{Abgeleitete Größen (5-Sektoren-Kreislauf):}
+\begin{vwlbox}
+\renewcommand{\arraystretch}{1.15}
+\begin{align*}
+\text{Nettoinvestition} &= \text{Bruttoinvestition} - \text{Abschreibungen}\\
+\text{Außenbeitrag} &= \text{Exporte} - \text{Importe}\\
+\text{Verf. Einkommen} &= \text{Volkseinkommen} - \text{Steuern} + \text{Transfers}\\
+\text{Gesamtetat Staat} &= \text{Ausgaben}_{\text{konsumtiv}} + \text{Inv.} + \text{Transfers} + \text{Subv.}
+\end{align*}
+\end{vwlbox}
+
 \subsection{BIP -- Berechnungsmethoden}
 
 \textbf{Entstehungsrechnung:}
@@ -1194,6 +1320,42 @@ BNE & Bruttonationaleinkommen (nach Inländerprinzip) \\
 NEW & Net Economic Welfare (Nettowohlstandsindikator) \\
 \hline
 \end{tabular}
+
+\vspace{4pt}
+\textbf{Lohn- und Gewinnquote:}
+\begin{vwlbox}
+\[
+\text{Lohnquote} = \frac{\text{Arbeitnehmerentgelt}}{\text{Volkseinkommen}} \times 100\%
+\]
+\[
+\text{Gewinnquote} = \frac{\text{Unternehmens- und Vermögenseinkommen}}{\text{Volkseinkommen}} \times 100\%
+\]
+\end{vwlbox}
+
+\textbf{Nettoinlandsprodukt (NIP):}
+\begin{vwlbox}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}l@{}}
+BIP (Marktpreise) \\
+$-$ Abschreibungen \\
+\hline
+$=$ NIP (Marktpreise) \\
+$-$ Produktions- und Importabgaben $+$ Subventionen \\
+\hline
+$=$ NIP (Herstellpreise) \\
+\end{tabular}
+\end{vwlbox}
+
+\textbf{BIP-Zeitreihenrechnung:}
+\begin{vwlbox}
+\[
+\text{BIP}_{\text{real}} = \frac{\text{BIP}_{\text{nominal}}}{\text{Preisindex}} \times 100
+\]
+\[
+\text{BIP}_{\text{Vorjahr}} = \frac{\text{BIP}_{\text{real, aktuell}}}{1 + w_{\text{real}}}
+\]
+\end{vwlbox}
+{\footnotesize $w_{\text{real}}$ = reale Wachstumsrate; Inflationsrate separat über Preisindex.}
 
 \end{multicols}
 
@@ -1262,9 +1424,18 @@ EZB legt Zinssatz und Zuteilungsbetrag fest. Alle Banken erhalten denselben proz
 \textbf{Zinstender} (variabler Zinssatz):
 \begin{itemize}[noitemsep, leftmargin=*]
   \item Banken bieten Zinssatz und Betrag
-  \item Höchste Zinssätze werden zuerst bedient
+  \item Höchste Zinssätze werden zuerst bedient (absteigend)
   \item EZB legt Mindestbietungssatz $=$ Leitzins fest
+  \item Letzte Grenzzone: anteilige Repartierung (wie Mengentender)
 \end{itemize}
+
+\textbf{Rückzahlung Bank $i$ bei Laufzeit $t$ (Wochen):}
+\begin{vwlbox}
+\[
+R_i = Z_i \times \left(1 + z_i \times \frac{t}{52}\right) % chktex 3
+\]
+\end{vwlbox}
+{\footnotesize $Z_i$ = zugeteilter Betrag; $z_i$ = Gebotszinssatz; $t$ = Laufzeit in Wochen.}
 
 \subsection{EZB-Leitzinsen und Geldpolitikinstrumente}
 
@@ -1412,6 +1583,255 @@ $|\varepsilon| = 1$ (unitär) & Preis $\uparrow$ $\Rightarrow$ konstant \\
 \vspace{6pt}
 {\color{bwlblue}\hrule height 1pt}
 \vspace{3pt}
-{\small\centering\textbf{Ende der Formelsammlung} -- Alle Formeln sind prüfungsrelevant. Schwerpunkt Klausur: 3 Stufen der KLR (Seiten 1--5), Deckungsbeitragsrechnung (Seite 8), BIP (Seite 10), Geldpolitik (Seite 11).}
+{\small\centering\textbf{Ende Seiten 1--12} -- Aufgaben-Rezepte auf Seite 13.}
+
+\newpage
+
+% ============================================================
+%  SEITE 13 -- KLAUSUR-REZEPTE: ABGRENZUNG, VWL-KETTE, PROZESSE
+% ============================================================
+\section{13 \quad Klausur-Rezepte -- Abgrenzungsrechnung, Volkseinkommenskette, Prozesskostenrechnung}
+
+\begin{multicols}{2}
+
+\subsection{Abgrenzungsrechnung -- Spaltenzuordnung}
+
+\textbf{Neutraler Aufwand} (nur FIBU, nicht in KLR):
+
+\begin{tabular}{|L{6.8cm}|}
+\hline
+\rowcolor{rowbg}
+Betriebsfremd: Instandhaltung Mietshaus, Verluste aus Beteiligungen, Spenden \\
+\hline
+Außerordentlich: Unfälle, Schadensfälle, Verluste aus Anlagenabgang \\
+\hline
+Periodenfremd: Steuernachzahlungen, periodenfremde Rückstellungen \\
+\hline
+FK-Zinsen (Finanzbereich -- in KLR durch kalk. Zinsen ersetzt) \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Neutraler Ertrag} (nur FIBU, nicht in KLR):
+
+\begin{tabular}{|L{6.8cm}|}
+\hline
+\rowcolor{rowbg}
+Mieteinnahmen aus betriebsfremdem Gebäude \\
+\hline
+Erlöse aus Anlagenverkauf (bereits abgeschriebene Anlagen) \\
+\hline
+Beteiligungserträge, Erlöse aus Aktienverkäufen \\
+\hline
+Zinserträge auf Bankguthaben \\
+\hline
+Erträge aus Vorperioden \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Verrechnete Kosten} (nur KLR, kein FIBU-Pendant):
+
+\begin{tabular}{|L{6.8cm}|}
+\hline
+\rowcolor{rowbg}
+Kalk. Unternehmerlohn \\
+\hline
+Kalk. Zinsen (auf betriebsnotwendiges Kapital) \\
+\hline
+Kalk. Wagnisse, kalk. Miete (Eigengebäude) \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Rechenregeln für die Tabellenspalten:}
+\begin{formelbox}
+\textbf{Aufwand lt.\,FIBU} (Grundkosten) $=$ Aufwand $-$ neutr.\,Aufwand\\[3pt]
+\textbf{Kosten (RK\,II)} $=$ Aufwand lt.\,FIBU $+$ Verrechnete Kosten\\
+\hspace*{1.5cm} $-$ buchm.\,AfA$_{\text{betriebl.}}$ $+$ kalk.\,AfA\\[3pt]
+\textbf{Leistungen (RK\,II)} $=$ Ertrag $-$ neutr.\,Ertrag $+$ akt.\,Eigenleist.
+\end{formelbox}
+
+\columnbreak
+
+\subsection{Buchm. AfA vs. Kalk. AfA}
+
+\begin{formelbox}
+\[
+\text{buchm. AfA} = \frac{\text{RBW}}{\text{ND}_{\text{steuerlich}}}
+\qquad
+\text{kalk. AfA} = \frac{\text{WBK}}{\text{ND}_{\text{kalk.}}}
+\]
+\[
+\text{kalk. Zinsen} = \frac{\text{WBK}}{2} \times i
+\quad \text{(linear abgeschriebenes AV)}
+\]
+\end{formelbox}
+
+\begin{tabular}{|L{2.2cm}|L{2.2cm}|L{2.2cm}|}
+\hline
+\rowcolor{rowbg}
+\textbf{Anlage} & \textbf{In FIBU} & \textbf{In KLR (RK\,II)} \\
+\hline
+Betriebl.\,AV (Maschinen) & buchm.\,AfA $\to$ Grundkosten & durch kalk.\,AfA ersetzt \\
+\hline
+Betriebsfr.\,AV (Mietshaus) & buchm.\,AfA $\to$ neutr.\,Aufwand & \textbf{nicht} in KLR \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Kalk. Zinsen:} BNA = WBK$\,/\,2$ (nur betriebl. AV, ohne betriebsfremdes!)
+
+\subsection{Die 4 Ergebnisgrößen}
+
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.35}
+\begin{align*}
+\mathbf{UE} &= \Sigma\,\text{Ertrag (FIBU)} - \Sigma\,\text{Aufwand (FIBU)}\\
+\mathbf{NE} &= \Sigma\,\text{neutr. Ertrag} - \Sigma\,\text{neutr. Aufwand}\\
+\mathbf{BE} &= \Sigma\,\text{Leistungen (RK\,II)} - \Sigma\,\text{Kosten (RK\,II)}\\
+\mathbf{BE} &= \mathbf{UE} - \mathbf{NE} + \text{kalk. Korrekturen (netto)}
+\end{align*}
+\end{formelbox}
+
+\begin{tabular}{|L{1.5cm}|L{5.5cm}|}
+\hline
+\rowcolor{rowbg}
+UE & Unternehmensergebnis (= FIBU-Gewinn / -Verlust) \\
+NE & Neutrales Ergebnis (betriebsfremd, außerordentl., periodenfremd) \\
+BE & Betriebsergebnis (KLR-Ergebnis aus RK\,II) \\
+\hline
+\end{tabular}
+
+\begin{hinweisbox}
+\textbf{Sozialabgaben:} $(\text{Löhne} + \text{Gehälter}) \times s_{\text{soz}}$\\
+\textbf{Umsatzerlöse:} $p \times x$
+\end{hinweisbox}
+
+\end{multicols}
+
+\vspace{4pt}
+
+\begin{multicols}{2}
+
+\subsection{Volkseinkommens-Kette (vollständig)}
+
+\begin{vwlbox}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}l@{}}
+$+$ Privater Konsum $(C)$ \\
+$+$ Staatskonsum $(G)$ \\
+$+$ Bruttoinvestitionen $(I)$ \\
+$+$ Exporte $-$ Importe \\
+\hline
+$=$ \textbf{BIP} (Bruttoinlandsprodukt) \\[3pt]
+$+$ Primäreinkommen \textit{aus} dem Ausland \\
+$-$ Primäreinkommen \textit{an} das Ausland \\
+\hline
+$=$ \textbf{BNE} (Bruttonationaleinkommen) \\[3pt]
+$-$ Abschreibungen \\
+\hline
+$=$ \textbf{NNE} (Nettonationaleinkommen, Marktpreise) \\[3pt]
+$-$ Indirekte Steuern (Produktionssteuern) \\
+$+$ Subventionen \\
+\hline
+$=$ \textbf{Volkseinkommen} \\
+\quad (Arbeitnehmerentgelt + Unternehmensgewinn) \\
+\end{tabular}
+\end{vwlbox}
+
+\begin{tabular}{|L{2.8cm}|L{4.2cm}|}
+\hline
+\rowcolor{rowvwl}
+Primäreink. aus Ausland & Einkommen von Inländern im Ausland \\
+Primäreink. an Ausland & Einkommen von Ausländern im Inland \\
+Volkseinkommen & Nettowertschöpfung zu Faktorkosten \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Verhältnisaufteilung (z.\,B. für Steuern / AfA im BAB):}
+
+\begin{formelbox}
+\[
+K_i = \frac{v_i}{\displaystyle\sum_j v_j} \times K_{\text{gesamt}}
+\]
+\end{formelbox}
+
+\textbf{Beispiel 4:2:1:1 (Summe $= 8$) auf 10.200\,€:}
+
+\begin{tabular}{|L{2.3cm}|L{1.2cm}|L{2.7cm}|}
+\hline
+\rowcolor{rowbg}
+Kostenstelle & Anteil & Betrag \\
+\hline
+Material & 4/8 & $0{,}50 \times 10.200 = 5.100$ \\
+Fertigung & 2/8 & $0{,}25 \times 10.200 = 2.550$ \\
+Verwaltung & 1/8 & $0{,}125 \times 10.200 = 1.275$ \\
+Vertrieb & 1/8 & $0{,}125 \times 10.200 = 1.275$ \\
+\hline
+\end{tabular}
+
+\columnbreak
+
+\subsection{Prozesskostenkalkulation -- lmi-Umlage}
+
+Unproduktive Leitungsstellen (lmn) werden anteilig auf die produktiven Mitarbeiter umgelegt.
+
+\begin{formelbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{align*}
+\text{lmi-Zuschlag/MA} &= \frac{k_{\text{Leitungsstelle}}}{n_{\text{prod.\,MA}}} \\[4pt]
+k_{\text{Vollkosten/MA}} &= k_{\text{prod.\,MA}} + \text{lmi-Zuschlag/MA} \\[4pt]
+K_j &= \text{MA-Zahl}_j \times k_{\text{Vollkosten/MA}} \\[4pt]
+\text{PKS}_j &= \frac{K_j}{\text{Kostentreibermenge}_j}
+\end{align*}
+\end{formelbox}
+
+\begin{tabular}{|L{2.5cm}|L{4.5cm}|}
+\hline
+\rowcolor{rowbg}
+PKS$_j$ & Prozesskostensatz Teilprozess $j$ (€/Stk.) \\
+Kostentreiber$_j$ & $\Sigma$ Produktionsmenge \textit{aller Produkte}, die Prozess $j$ durchlaufen \\
+lmi & leistungsmengeninduziert (produktiv) \\
+lmn & leistungsmengenneutral (Leitungsstelle) $\to$ wird umgelegt \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Prozesskalkulation vs. Zuschlagskalkulation:}
+
+\begin{tabular}{|L{3cm}|L{1.8cm}|L{2cm}|}
+\hline
+\rowcolor{rowbg}
+& \textbf{Zuschlag} & \textbf{Prozess} \\
+\hline
+Versandkosten/Stk. & $\text{HK} \times \text{VtGK\%}$ & $\displaystyle\sum_j \text{PKS}_j$ \\
+Kostenbasis & Wertbasis (€) & Mengenbasis \\
+Verursachung & undiff. & verursachungs\-gerecht \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+\textbf{Prozesskosten je Stück:}
+\begin{formelbox}
+Nur PKS der Prozesse addieren, die das Produkt \textbf{tatsächlich durchläuft} ($\times$ in der Prozesstabelle).
+\end{formelbox}
+
+\vspace{4pt}
+\textbf{Allokationseffekt (Prozess- vs. Zuschlagskalkulation):}
+\begin{formelbox}
+\[
+\Delta k_i = k_{i,\text{Prozess}} - k_{i,\text{Zuschlag}}
+\]
+\end{formelbox}
+{\footnotesize $\Delta k_i > 0$: Produkt $i$ wird bei Prozesskalkulation \textbf{teurer} bewertet (verursacht mehr Aktivitäten). $\Delta k_i < 0$: Produkt $i$ wird günstiger bewertet. Summe der Allokationseffekte $= 0$ (Gesamtkosten bleiben gleich).}
+
+\end{multicols}
+
+\vspace{6pt}
+{\color{bwlblue}\hrule height 1pt}
+\vspace{3pt}
+{\small\centering\textbf{Ende der Formelsammlung} -- Alle Formeln sind prüfungsrelevant. Schwerpunkt Klausur: 3 Stufen der KLR (Seiten 1--5), Deckungsbeitragsrechnung (Seite 8), BIP (Seite 10), Geldpolitik (Seite 11), \textbf{Aufgaben-Rezepte (Seite 13)}.}
 
 \end{document}
